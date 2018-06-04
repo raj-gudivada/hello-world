@@ -15,30 +15,31 @@ import com.snow.search.dto.MessageDTO;
 import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
-public class SnowBasicSearchErrorHandling extends SnowErrorHandling{
+public class SnowBasicSearchErrorHandling extends SnowErrorHandling {
 	final static Logger logger = Logger.getLogger(SnowBasicSearchErrorHandling.class);
 
-	public ErrorhandlerDTO basicSearchFacetErrorHandling(RequestDTO requestDTO) throws IOException{
-		ErrorhandlerDTO errorhandling=null;
-		//if (!requestDTO.getMode().equalsIgnoreCase("Autosuggestterms")||!requestDTO.getMode().equalsIgnoreCase("Autosuggest")) {
-		SnowUtils snowSearchUtils=new SnowUtils();
-		List<String> facetSelection=requestDTO.getFacetSelection();
+	public ErrorhandlerDTO basicSearchFacetErrorHandling(RequestDTO requestDTO) throws IOException {
+		ErrorhandlerDTO errorhandling = null;
+		SnowUtils snowSearchUtils = new SnowUtils();
+		List<String> facetSelection = requestDTO.getFacetSelection();
 		Properties values = snowSearchUtils.getPropertyValues();
-		if(facetSelection==null ||facetSelection.isEmpty()||facetSelection.size()==0||facetSelection.contains(" ")||facetSelection.contains("")){
-			errorhandling=new ErrorhandlerDTO();
+		if (facetSelection == null || facetSelection.isEmpty() || facetSelection.size() == 0
+				|| facetSelection.contains(" ") || facetSelection.contains("")) {
+			errorhandling = new ErrorhandlerDTO();
 			errorhandling.setErrorMessage(values.getProperty("errorMessage.facetSelection"));
 			errorhandling.setErrorCode(values.getProperty("errorcode.facetSelection"));
 		}
-		//}
+		// }
 		return errorhandling;
 	}
 
-	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs,MessageDTO messageDTO) throws  JsonProcessingException, JSONException {
+	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs, MessageDTO messageDTO)
+			throws JsonProcessingException, JSONException {
 		JSONArray list = new JSONArray();
 		JSONObject responseObject = new JSONObject();
 		for (ErrorhandlerDTO errorhandlerDTO : errorhandlerDTOs) {
 			JSONObject errorObject = new JSONObject();
-			errorObject.put("errorCode",errorhandlerDTO.getErrorCode());
+			errorObject.put("errorCode", errorhandlerDTO.getErrorCode());
 			errorObject.put("errorMessage", errorhandlerDTO.getErrorMessage());
 			list.put(errorObject);
 		}
@@ -49,5 +50,3 @@ public class SnowBasicSearchErrorHandling extends SnowErrorHandling{
 	}
 
 }
-
-
