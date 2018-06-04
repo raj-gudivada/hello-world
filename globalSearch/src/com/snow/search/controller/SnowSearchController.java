@@ -166,7 +166,6 @@ public class SnowSearchController {
 				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
-				// TODO Auto-generated catch block
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
 				e1.printStackTrace();

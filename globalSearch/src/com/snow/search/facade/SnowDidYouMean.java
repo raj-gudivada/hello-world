@@ -30,8 +30,7 @@ public class SnowDidYouMean {
 
 	public String spellcheck(String queryParam) throws IOException, SolrServerException {
 
-		SnowUtils snowSearchUtils = new SnowUtils();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
 		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
 		ModifiableSolrParams params = new ModifiableSolrParams();

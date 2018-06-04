@@ -11,15 +11,19 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class SnowUtiltyFunctions {
-	final static Logger LOGGER = Logger.getLogger(SnowUtiltyFunctions.class);
+
 	SnowUtils snowSearchUtils = new SnowUtils();
+
+
+	final static Logger LOG = Logger.getLogger(SnowUtiltyFunctions.class);
+
 
 	public String fetchUserRoles(RequestDTO requestDTO) throws IOException {
 		List<String> searchType = requestDTO.getSearchType();
 		String roleValue = null;
 		String response = null;
 
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		if (searchType.contains("LOC") || searchType.contains("UD") || searchType.contains("APP")) {
 			roleValue = values.getProperty("ud.loc.all.roles");
 		} else {
@@ -52,7 +56,7 @@ public class SnowUtiltyFunctions {
 
 		AttributesDTO attributes = new AttributesDTO();
 
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		StringBuffer sb = new StringBuffer();
 		for (String multiSearchType : searchTypes) {
 			sb.append("\"" + multiSearchType + "\"" + ",");

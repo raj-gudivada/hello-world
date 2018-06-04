@@ -21,19 +21,16 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class AutoSuggestSolrjClientConnectService {
-	final static Logger LOGGER = Logger.getLogger(AutoSuggestSolrjClientConnectService.class);
+
+	final static Logger LOG = Logger.getLogger(AutoSuggestSolrjClientConnectService.class);
 
 	// AutoFill Query Module
-
 	public void setMultipleFacets(AttributesDTO attributes, SolrQuery query) {
 		if (attributes.getFacet() == true) {
 			String facetFieldMapValue = "facet.field";
 			String[] fieldNames = attributes.getFacetValue().split(",");
-
 			Map<String, String[]> facetFieldNames = new HashMap<String, String[]>();
-
 			facetFieldNames.put(facetFieldMapValue, fieldNames);
-
 			ModifiableSolrParams solrParams = new ModifiableSolrParams(facetFieldNames);
 			Map<String, String[]> facetField = solrParams.getMap();
 			for (Map.Entry<String, String[]> entry : facetField.entrySet()) {
@@ -44,7 +41,6 @@ public class AutoSuggestSolrjClientConnectService {
 					value = string;
 					query.add(param, value);
 				}
-
 			}
 		}
 		query.setFacet(attributes.getFacet());
@@ -52,11 +48,10 @@ public class AutoSuggestSolrjClientConnectService {
 
 	public String autoFillQuerySearch(RequestDTO requestDTO, AttributesDTO attributesDTO)
 			throws IOException, SolrServerException {
-		SnowUtils snowSearchUtils = new SnowUtils();
 		String jsonResponse = null;
 		String activeProperty = attributesDTO.getActiveProperty();
 		Properties values = null;
-		values = snowSearchUtils.getPropertyValues();
+		values = SnowUtils.getPropertyValues();
 		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
 		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
@@ -85,28 +80,30 @@ public class AutoSuggestSolrjClientConnectService {
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
+
 		if (null != query.toString()) {
-			LOGGER.info("Solr Query :" + query.toString());
+			LOG.info("Solr Query :" + query.toString());
 		}
+
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
+
 		if (null != qTime) {
-			LOGGER.info("Query Time :" + qTime + "mSec");
+			LOG.info("Query Time :" + qTime + "mSec");
 		}
+
 		return jsonResponse;
 	}
 
 	public String autoSuggestTermsSearch(String queryParam, Integer maxRows, AttributesDTO attributes)
 			throws IOException, SolrServerException {
 
-		SnowUtils snowSearchUtils = new SnowUtils();
 		String activeProperty = attributes.getActiveProperty();
 		Properties values = null;
 		String jsonResponse = null;
-		// try{
-		values = snowSearchUtils.getPropertyValues();
+		values = SnowUtils.getPropertyValues();
 		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
 		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
@@ -140,12 +137,12 @@ public class AutoSuggestSolrjClientConnectService {
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
-		logger.info("Solr Query :" + query.toString());
+		LOG.info("Solr Query :" + query.toString());
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
-		logger.info("Query Time :" + qTime + "mSec");
+		LOG.info("Query Time :" + qTime + "mSec");
 		solr.close();
 		return jsonResponse;
 	}

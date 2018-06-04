@@ -12,15 +12,8 @@ import org.apache.log4j.Logger;
 public class SnowUtils {
 
 	public static final Logger LOG = Logger.getLogger(SnowUtils.class);
-
 	public static Properties prop = null;
 	public static long lastModified = 0;
-
-	/*public static Object convertJSONtoDTO(final String response, final Object objectToConvert) throws Exception {
-
-		ObjectMapper mapper = new ObjectMapper();
-		return mapper.readValue(response, objectToConvert.getClass());
-	}*/
 
 	public static Properties getPropertyValues() throws IOException {
 
@@ -28,7 +21,7 @@ public class SnowUtils {
 				+ "searchConigurations" + File.separator + "config.properties");
 		InputStream fis = null;
 		String fileName = File.separator + "data" + File.separator + "snowsearch" + File.separator
-				+ "searchConigurations" + File.separator + "config.properties" ;
+				+ "searchConigurations" + File.separator + "config.properties";
 
 		if (file.exists() && ((file.lastModified() != lastModified))) {
 

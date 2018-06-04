@@ -12,11 +12,10 @@ import com.snow.search.service.SolrjClientConnectService;
 import com.snow.util.SnowUtils;
 
 public class SnowSearchFacade {
-	SnowUtils snowSearchUtils = new SnowUtils();
 
 	public String fetchUserRoles(RequestDTO reqDto) throws IOException {
 
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		List<String> searchType = reqDto.getSearchType();
 		String roleValue = null;
 		if (searchType.contains("LOC") || searchType.contains("UD") || searchType.contains("APP")) {
@@ -49,7 +48,7 @@ public class SnowSearchFacade {
 
 	public AttributesDTO fetchAll(RequestDTO reqDTO) throws IOException {
 		AttributesDTO attributes = new AttributesDTO();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		List<String> searchTypes = reqDTO.getSearchType();
 		List<String> facetselected = reqDTO.getFacetSelection();
 		StringBuffer sb = new StringBuffer();
@@ -62,7 +61,6 @@ public class SnowSearchFacade {
 				attributes.setSpecialUser("");
 			} else {
 				attributes.setSpecialUser(fetchUserRoles(reqDTO));
-				;
 			}
 			String finalFilterType = sb.substring(0, sb.length() - 1);
 			if (facetselected.contains("") || facetselected.isEmpty() || facetselected.contains(" ")
