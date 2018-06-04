@@ -1,0 +1,1171 @@
+src/com/snow/search/controller/SnowSearchController.java:31:	Each class should declare at least one constructor
+src/com/snow/search/controller/SnowSearchController.java:31:	Header comments are required
+src/com/snow/search/controller/SnowSearchController.java:32:	Field comments are required
+src/com/snow/search/controller/SnowSearchController.java:32:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/controller/SnowSearchController.java:32:	Use explicit scoping instead of the default package private level
+src/com/snow/search/controller/SnowSearchController.java:32:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/controller/SnowSearchController.java:33:	Field comments are required
+src/com/snow/search/controller/SnowSearchController.java:33:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/snow/search/controller/SnowSearchController.java:33:	To avoid mistakes add a comment at the beginning of the snowSearchUtils field if you want a default access modifier
+src/com/snow/search/controller/SnowSearchController.java:33:	Use explicit scoping instead of the default package private level
+src/com/snow/search/controller/SnowSearchController.java:35:	The String literal "application/json" appears 4 times in this file; the first occurrence is on line 35
+src/com/snow/search/controller/SnowSearchController.java:36:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:36:	Public method and constructor comments are required
+src/com/snow/search/controller/SnowSearchController.java:36:	The method 'basicSolrSearchPost(RequestDTO)' has a NCSS line count of 42.
+src/com/snow/search/controller/SnowSearchController.java:37:	Found 'DD'-anomaly for variable 'queryResponse' (lines '37'-'70').
+src/com/snow/search/controller/SnowSearchController.java:37:	Found 'DD'-anomaly for variable 'queryResponse' (lines '37'-'77').
+src/com/snow/search/controller/SnowSearchController.java:47:	Found 'DD'-anomaly for variable 'attributes' (lines '47'-'76').
+src/com/snow/search/controller/SnowSearchController.java:47:	Found 'DU'-anomaly for variable 'attributes' (lines '47'-'118').
+src/com/snow/search/controller/SnowSearchController.java:49:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:49:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:50:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:52:	Local variable 'ite' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:58:	Local variable 'value' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:59:	Avoid using if statements without curly braces
+src/com/snow/search/controller/SnowSearchController.java:59:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:59:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:60:	This statement should have braces
+src/com/snow/search/controller/SnowSearchController.java:62:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:67:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/controller/SnowSearchController.java:67:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/controller/SnowSearchController.java:68:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:70:	Found 'DD'-anomaly for variable 'queryResponse' (lines '70'-'108').
+src/com/snow/search/controller/SnowSearchController.java:74:	Local variable 'searchFacade' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:75:	Local variable 'user' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:79:	Local variable 'didYouMean' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:80:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:84:	There is log block not surrounded by if
+src/com/snow/search/controller/SnowSearchController.java:87:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/com/snow/search/controller/SnowSearchController.java:88:	The String literal "Some error occured ! Please check." appears 8 times in this file; the first occurrence is on line 88
+src/com/snow/search/controller/SnowSearchController.java:90:	Local variable 'snowUtils' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:92:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:95:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:97:	The String literal "response.error.responseCode" appears 4 times in this file; the first occurrence is on line 97
+src/com/snow/search/controller/SnowSearchController.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:98:	The String literal "response.error.responseMessage" appears 4 times in this file; the first occurrence is on line 98
+src/com/snow/search/controller/SnowSearchController.java:99:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:100:	Local variable 'errorhandlerDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:101:	The String literal "errorcode.exception" appears 4 times in this file; the first occurrence is on line 101
+src/com/snow/search/controller/SnowSearchController.java:102:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:102:	The String literal "errorMessage.exception" appears 4 times in this file; the first occurrence is on line 102
+src/com/snow/search/controller/SnowSearchController.java:105:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:105:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:108:	Found 'DD'-anomaly for variable 'queryResponse' (lines '108'-'112').
+src/com/snow/search/controller/SnowSearchController.java:112:	The String literal "Some Internal Error Occured !" appears 4 times in this file; the first occurrence is on line 112
+src/com/snow/search/controller/SnowSearchController.java:113:	Avoid printStackTrace(); use a logger call instead.
+src/com/snow/search/controller/SnowSearchController.java:120:	Method names should not start with capital letters
+src/com/snow/search/controller/SnowSearchController.java:121:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:122:	Local variable 'snowUtils' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:123:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:125:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:129:	Parameter 'authCredentials' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:129:	Public method and constructor comments are required
+src/com/snow/search/controller/SnowSearchController.java:129:	The method 'isUserAuthenticated(String)' has a NCSS line count of 13.
+src/com/snow/search/controller/SnowSearchController.java:130:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:131:	Local variable 'userName' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:131:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:131:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:132:	Local variable 'password' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:132:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:132:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:133:	Avoid excessively long variable names like userNameAndPassword
+src/com/snow/search/controller/SnowSearchController.java:133:	Local variable 'userNameAndPassword' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:134:	Avoid excessively long variable names like encodedCredentials
+src/com/snow/search/controller/SnowSearchController.java:134:	Local variable 'encodedCredentials' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:134:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:134:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:135:	Local variable 'finalCredentials' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:136:	System.out.println is used
+src/com/snow/search/controller/SnowSearchController.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:138:	A method should have only one exit point, and that should be the last statement in the method
+src/com/snow/search/controller/SnowSearchController.java:140:	Avoid unnecessary if..then..else statements when returning booleans
+src/com/snow/search/controller/SnowSearchController.java:141:	A method should have only one exit point, and that should be the last statement in the method
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'facetSelection' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'rows' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'searchType' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'start' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Parameter 'userRoles' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:146:	Public method and constructor comments are required
+src/com/snow/search/controller/SnowSearchController.java:146:	The method 'basicSolrSearchGet(String, Integer, Integer, List, List, List)' has a NCSS line count of 46.
+src/com/snow/search/controller/SnowSearchController.java:147:	Found 'DD'-anomaly for variable 'queryResponse' (lines '147'-'179').
+src/com/snow/search/controller/SnowSearchController.java:147:	Found 'DD'-anomaly for variable 'queryResponse' (lines '147'-'183').
+src/com/snow/search/controller/SnowSearchController.java:150:	Local variable 'searchFacade' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:151:	Local variable 'requestDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:158:	Found 'DU'-anomaly for variable 'user' (lines '158'-'212').
+src/com/snow/search/controller/SnowSearchController.java:158:	Local variable 'user' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:160:	Found 'DD'-anomaly for variable 'attributes' (lines '160'-'182').
+src/com/snow/search/controller/SnowSearchController.java:160:	Found 'DU'-anomaly for variable 'attributes' (lines '160'-'212').
+src/com/snow/search/controller/SnowSearchController.java:163:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:163:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:164:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:165:	Local variable 'ite' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:167:	Local variable 'value' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:168:	Avoid using if statements without curly braces
+src/com/snow/search/controller/SnowSearchController.java:168:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:168:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:169:	This statement should have braces
+src/com/snow/search/controller/SnowSearchController.java:171:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:175:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/controller/SnowSearchController.java:175:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/controller/SnowSearchController.java:176:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:177:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:179:	Found 'DD'-anomaly for variable 'queryResponse' (lines '179'-'203').
+src/com/snow/search/controller/SnowSearchController.java:184:	There is log block not surrounded by if
+src/com/snow/search/controller/SnowSearchController.java:187:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/com/snow/search/controller/SnowSearchController.java:190:	Local variable 'snowUtils' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:192:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:193:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:195:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:196:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:197:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:198:	Local variable 'errorhandlerDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:199:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:200:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:202:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:202:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:203:	Found 'DD'-anomaly for variable 'queryResponse' (lines '203'-'207').
+src/com/snow/search/controller/SnowSearchController.java:208:	Avoid printStackTrace(); use a logger call instead.
+src/com/snow/search/controller/SnowSearchController.java:216:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:216:	Public method and constructor comments are required
+src/com/snow/search/controller/SnowSearchController.java:216:	The method 'autoSuggestSolrSearchPost(RequestDTO)' has a NCSS line count of 38.
+src/com/snow/search/controller/SnowSearchController.java:217:	Avoid excessively long variable names like snowAutoSuggestFacade
+src/com/snow/search/controller/SnowSearchController.java:217:	Found 'DU'-anomaly for variable 'snowAutoSuggestFacade' (lines '217'-'277').
+src/com/snow/search/controller/SnowSearchController.java:217:	Local variable 'snowAutoSuggestFacade' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:218:	Found 'DD'-anomaly for variable 'queryResponse' (lines '218'-'228').
+src/com/snow/search/controller/SnowSearchController.java:218:	Found 'DD'-anomaly for variable 'queryResponse' (lines '218'-'236').
+src/com/snow/search/controller/SnowSearchController.java:218:	Found 'DD'-anomaly for variable 'queryResponse' (lines '218'-'241').
+src/com/snow/search/controller/SnowSearchController.java:218:	Found 'DD'-anomaly for variable 'queryResponse' (lines '218'-'266').
+src/com/snow/search/controller/SnowSearchController.java:222:	Local variable 'errorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:223:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:224:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/controller/SnowSearchController.java:224:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/controller/SnowSearchController.java:225:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:225:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:226:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:228:	Found 'DD'-anomaly for variable 'queryResponse' (lines '228'-'266').
+src/com/snow/search/controller/SnowSearchController.java:233:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:234:	Found 'DD'-anomaly for variable 'attributes' (lines '234'-'235').
+src/com/snow/search/controller/SnowSearchController.java:236:	Found 'DD'-anomaly for variable 'queryResponse' (lines '236'-'241').
+src/com/snow/search/controller/SnowSearchController.java:236:	Found 'DD'-anomaly for variable 'queryResponse' (lines '236'-'266').
+src/com/snow/search/controller/SnowSearchController.java:238:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:241:	Found 'DD'-anomaly for variable 'queryResponse' (lines '241'-'266').
+src/com/snow/search/controller/SnowSearchController.java:245:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/com/snow/search/controller/SnowSearchController.java:248:	Local variable 'snowUtils' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:250:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:253:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:255:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:256:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:257:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:258:	Local variable 'errorhandlerDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:259:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:260:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:263:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:263:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:266:	Found 'DD'-anomaly for variable 'queryResponse' (lines '266'-'270').
+src/com/snow/search/controller/SnowSearchController.java:271:	Avoid printStackTrace(); use a logger call instead.
+src/com/snow/search/controller/SnowSearchController.java:280:	Parameter 'maxRows' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:280:	Parameter 'mode' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:280:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:280:	Parameter 'searchType' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:280:	Parameter 'userRoles' is not assigned and could be declared final
+src/com/snow/search/controller/SnowSearchController.java:280:	Public method and constructor comments are required
+src/com/snow/search/controller/SnowSearchController.java:280:	The method 'autoSuggestSolrSearchGet(String, Integer, List, List, String)' has a NCSS line count of 44.
+src/com/snow/search/controller/SnowSearchController.java:281:	Avoid excessively long variable names like snowAutoSuggestFacade
+src/com/snow/search/controller/SnowSearchController.java:281:	Found 'DU'-anomaly for variable 'snowAutoSuggestFacade' (lines '281'-'347').
+src/com/snow/search/controller/SnowSearchController.java:281:	Local variable 'snowAutoSuggestFacade' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:282:	Local variable 'requestDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:288:	Found 'DD'-anomaly for variable 'queryResponse' (lines '288'-'297').
+src/com/snow/search/controller/SnowSearchController.java:288:	Found 'DD'-anomaly for variable 'queryResponse' (lines '288'-'306').
+src/com/snow/search/controller/SnowSearchController.java:288:	Found 'DD'-anomaly for variable 'queryResponse' (lines '288'-'311').
+src/com/snow/search/controller/SnowSearchController.java:288:	Found 'DD'-anomaly for variable 'queryResponse' (lines '288'-'336').
+src/com/snow/search/controller/SnowSearchController.java:292:	Local variable 'errorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:293:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:294:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/controller/SnowSearchController.java:294:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/controller/SnowSearchController.java:295:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:295:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:296:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:297:	Found 'DD'-anomaly for variable 'queryResponse' (lines '297'-'336').
+src/com/snow/search/controller/SnowSearchController.java:303:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:304:	Found 'DD'-anomaly for variable 'attributes' (lines '304'-'305').
+src/com/snow/search/controller/SnowSearchController.java:306:	Found 'DD'-anomaly for variable 'queryResponse' (lines '306'-'311').
+src/com/snow/search/controller/SnowSearchController.java:306:	Found 'DD'-anomaly for variable 'queryResponse' (lines '306'-'336').
+src/com/snow/search/controller/SnowSearchController.java:308:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/controller/SnowSearchController.java:311:	Found 'DD'-anomaly for variable 'queryResponse' (lines '311'-'336').
+src/com/snow/search/controller/SnowSearchController.java:315:	Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block
+src/com/snow/search/controller/SnowSearchController.java:318:	Local variable 'snowUtils' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:320:	Local variable 'values' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:323:	Local variable 'messageDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:325:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:326:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:327:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:328:	Local variable 'errorhandlerDTO' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:329:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:330:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/controller/SnowSearchController.java:333:	Avoid excessively long variable names like basicSearchErrorHandling
+src/com/snow/search/controller/SnowSearchController.java:333:	Local variable 'basicSearchErrorHandling' could be declared final
+src/com/snow/search/controller/SnowSearchController.java:336:	Found 'DD'-anomaly for variable 'queryResponse' (lines '336'-'340').
+src/com/snow/search/controller/SnowSearchController.java:341:	Avoid printStackTrace(); use a logger call instead.
+src/com/snow/search/controller/SnowSearchController.java:348:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:348:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:349:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:353:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:360:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:360:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:361:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:365:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:368:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:368:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:369:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:373:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:374:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:385:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:385:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:386:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:391:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:403:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:403:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:404:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:408:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:413:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:426:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:435:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:437:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:455:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:455:	Comment is too large: Too many lines
+src/com/snow/search/controller/SnowSearchController.java:456:	Comment is too large: Line too long
+src/com/snow/search/controller/SnowSearchController.java:476:	Comment is too large: Line too long
+src/com/snow/search/dto/AttributesDTO.java:3:	Each class should declare at least one constructor
+src/com/snow/search/dto/AttributesDTO.java:3:	Header comments are required
+src/com/snow/search/dto/AttributesDTO.java:3:	The class 'AttributesDTO' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=16, WMC=16)
+src/com/snow/search/dto/AttributesDTO.java:5:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:6:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:7:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:8:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:9:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:10:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:11:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:12:	Field comments are required
+src/com/snow/search/dto/AttributesDTO.java:18:	Parameter 'fields' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:26:	Parameter 'facetValue' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:34:	Parameter 'facet' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:42:	Parameter 'filterType' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:50:	Parameter 'specialUser' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:58:	Parameter 'boostField' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:66:	Parameter 'activeProperty' is not assigned and could be declared final
+src/com/snow/search/dto/AttributesDTO.java:74:	Parameter 'boostQuery' is not assigned and could be declared final
+src/com/snow/search/dto/ErrorhandlerDTO.java:3:	Each class should declare at least one constructor
+src/com/snow/search/dto/ErrorhandlerDTO.java:3:	Header comments are required
+src/com/snow/search/dto/ErrorhandlerDTO.java:3:	The class 'ErrorhandlerDTO' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=4, WMC=4)
+src/com/snow/search/dto/ErrorhandlerDTO.java:5:	Field comments are required
+src/com/snow/search/dto/ErrorhandlerDTO.java:6:	Field comments are required
+src/com/snow/search/dto/ErrorhandlerDTO.java:10:	Parameter 'errorCode' is not assigned and could be declared final
+src/com/snow/search/dto/ErrorhandlerDTO.java:16:	Parameter 'errorMessage' is not assigned and could be declared final
+src/com/snow/search/dto/MessageDTO.java:3:	Each class should declare at least one constructor
+src/com/snow/search/dto/MessageDTO.java:3:	Header comments are required
+src/com/snow/search/dto/MessageDTO.java:3:	The class 'MessageDTO' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=6, WMC=6)
+src/com/snow/search/dto/MessageDTO.java:5:	Field comments are required
+src/com/snow/search/dto/MessageDTO.java:7:	Field comments are required
+src/com/snow/search/dto/MessageDTO.java:9:	Field comments are required
+src/com/snow/search/dto/MessageDTO.java:15:	Parameter 'responseCode' is not assigned and could be declared final
+src/com/snow/search/dto/MessageDTO.java:23:	Parameter 'responseMessage' is not assigned and could be declared final
+src/com/snow/search/dto/MessageDTO.java:31:	Parameter 'headerValue' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:5:	Each class should declare at least one constructor
+src/com/snow/search/dto/RequestDTO.java:5:	Header comments are required
+src/com/snow/search/dto/RequestDTO.java:5:	The class 'RequestDTO' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=28, WMC=28)
+src/com/snow/search/dto/RequestDTO.java:6:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:7:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:8:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:9:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:10:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:11:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:12:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:13:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:14:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:15:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:16:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:17:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:18:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:19:	Field comments are required
+src/com/snow/search/dto/RequestDTO.java:24:	Parameter 'maxRows' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:31:	Parameter 'start' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:37:	Parameter 'rows' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:43:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:51:	Parameter 'userId' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:57:	Parameter 'vendorId' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:63:	Parameter 'searchContext' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:69:	Parameter 'mode' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:75:	Parameter 'userType' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:81:	Parameter 'userRoles' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:87:	Parameter 'searchType' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:93:	Parameter 'facetSelection' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:99:	Parameter 'searchText' is not assigned and could be declared final
+src/com/snow/search/dto/RequestDTO.java:105:	Parameter 'sortBy' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:13:	An empty statement (semicolon) not part of a loop
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:15:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:15:	Header comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:15:	The class 'SnowAutoSuggestFacade' has a Modified Cyclomatic Complexity of 7 (Highest = 16).
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:15:	The class 'SnowAutoSuggestFacade' has a Standard Cyclomatic Complexity of 7 (Highest = 16).
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:16:	Field comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:16:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:16:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:16:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	Avoid really long methods.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	Found 'UR'-anomaly for variable 'searchValue' (lines '18'-'27').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	The method 'fetchAutoFillFields' has a Modified Cyclomatic Complexity of 16.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	The method 'fetchAutoFillFields' has a Standard Cyclomatic Complexity of 16.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	The method 'fetchAutoFillFields(RequestDTO)' has a NCSS line count of 89.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	The method 'fetchAutoFillFields(RequestDTO)' has a cyclomatic complexity of 26.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:18:	The method 'fetchAutoFillFields(RequestDTO)' has an NPath complexity of 974
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:19:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:20:	Found 'DD'-anomaly for variable 'attributes' (lines '20'-'25').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:21:	Local variable 'searchTypes' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:22:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:23:	Avoid using Literals in Conditional Statements
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:23:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:24:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:24:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:26:	Local variable 'searchValue' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:27:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:27:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:28:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:29:	System.out.println is used
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:30:	The String literal "autoSuggest.fl.all" appears 7 times in this file; the first occurrence is on line 30
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:31:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:32:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:32:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:32:	The String literal "autoSuggest.facet.all" appears 7 times in this file; the first occurrence is on line 32
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:35:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:36:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:36:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:37:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:37:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:38:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:41:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:42:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:42:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:43:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:47:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:48:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:48:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:53:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:55:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:56:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:56:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:58:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:59:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:59:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:60:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:60:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:63:	The String literal "active.property" appears 4 times in this file; the first occurrence is on line 63
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:66:	Local variable 'searchValue' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:67:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:67:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:68:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:69:	System.out.println is used
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:70:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:70:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:71:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:71:	The String literal "filter.type.all" appears 12 times in this file; the first occurrence is on line 71
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:72:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:72:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:73:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:74:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:78:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:79:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:79:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:80:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:80:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:82:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:82:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:83:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:84:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:84:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:86:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:86:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:89:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:90:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:90:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:91:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:91:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:92:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:94:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:95:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:95:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:96:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:97:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:100:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:102:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:102:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:103:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:105:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:106:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:106:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:108:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:108:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:112:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:114:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:114:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:115:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:116:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:116:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:117:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:118:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:118:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:119:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:120:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:120:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:123:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:125:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:126:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:128:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:128:	Local variable 'functions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:129:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:130:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:130:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:133:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:133:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:140:	Parameter 'attributesDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:140:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:140:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:142:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:142:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:143:	Found 'DD'-anomaly for variable 'queryResponse' (lines '143'-'145').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:152:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:152:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:152:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:155:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:155:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:156:	Found 'DD'-anomaly for variable 'queryResponse' (lines '156'-'158').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	Found 'UR'-anomaly for variable 'searchValue' (lines '164'-'182').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	The method 'fetchAutoSuggestTerms(RequestDTO)' has a NCSS line count of 45.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	The method 'fetchAutoSuggestTerms(RequestDTO)' has a cyclomatic complexity of 14.
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:164:	The method 'fetchAutoSuggestTerms(RequestDTO)' has an NPath complexity of 488
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:165:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:166:	Found 'DD'-anomaly for variable 'attributes' (lines '166'-'173').
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:167:	Local variable 'searchTypes' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:168:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:171:	Avoid using Literals in Conditional Statements
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:171:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:172:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:172:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:174:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:175:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:175:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:180:	Local variable 'searchValue' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:182:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:182:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:183:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:184:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:185:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:185:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:186:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:186:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:186:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:187:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:189:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:191:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:193:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:193:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:195:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:195:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:195:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:196:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:200:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:202:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:204:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:204:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:205:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:205:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:205:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:206:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:210:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:211:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:213:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:213:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:214:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:214:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:214:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:215:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:219:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:220:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:221:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:221:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:222:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:222:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:222:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:223:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:226:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:227:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:228:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:229:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:229:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:230:	Avoid excessively long variable names like snowUtiltyFunctions
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:230:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:230:	Local variable 'snowUtiltyFunctions' could be declared final
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:231:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:235:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowAutoSuggestFacade.java:235:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:18:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:18:	Header comments are required
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Field comments are required
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:22:	Found 'DD'-anomaly for variable 'errorhandling' (lines '22'-'28').
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:23:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:24:	Local variable 'facetSelection' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:25:	Found 'DU'-anomaly for variable 'values' (lines '25'-'34').
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:25:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Found 'UR'-anomaly for variable 'errorhandlerDTO' (lines '36'-'42').
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Parameter 'errorhandlerDTOs' is not assigned and could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Parameter 'messageDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	The method 'errorListResponse(List, MessageDTO)' has a NCSS line count of 13.
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:38:	Local variable 'list' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:39:	Local variable 'responseObject' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:40:	Local variable 'errorhandlerDTO' could be declared final
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:41:	Avoid instantiating new objects inside loops
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:41:	Local variable 'errorObject' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:19:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowDidYouMean.java:19:	Header comments are required
+src/com/snow/search/facade/SnowDidYouMean.java:21:	A method/constructor should not explicitly throw java.lang.Exception
+src/com/snow/search/facade/SnowDidYouMean.java:21:	Parameter 'queryResponse' is not assigned and could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:21:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowDidYouMean.java:22:	Local variable 'mapper' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:24:	Local variable 'node' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:25:	Local variable 'responseNode' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:25:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowDidYouMean.java:27:	Local variable 'numfound' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:27:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowDidYouMean.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowDidYouMean.java:28:	Consider simply returning the value vs storing it in local variable 'numfound'
+src/com/snow/search/facade/SnowDidYouMean.java:31:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:31:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowDidYouMean.java:31:	The method 'spellcheck(String)' has a NCSS line count of 20.
+src/com/snow/search/facade/SnowDidYouMean.java:33:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:34:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:35:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/facade/SnowDidYouMean.java:35:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:36:	Local variable 'solr' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:37:	Local variable 'params' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowDidYouMean.java:38:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowDidYouMean.java:38:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowDidYouMean.java:42:	Local variable 'query' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:44:	Local variable 'req' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:45:	Avoid excessively long variable names like rawJsonResponseParser
+src/com/snow/search/facade/SnowDidYouMean.java:45:	Local variable 'rawJsonResponseParser' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:49:	Local variable 'resp' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowDidYouMean.java:50:	Local variable 'jsonResponse' could be declared final
+src/com/snow/search/facade/SnowDidYouMean.java:50:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowDidYouMean.java:52:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:15:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowErrorHandling.java:15:	Header comments are required
+src/com/snow/search/facade/SnowErrorHandling.java:15:	The class 'SnowErrorHandling' has a Modified Cyclomatic Complexity of 5 (Highest = 10).
+src/com/snow/search/facade/SnowErrorHandling.java:15:	The class 'SnowErrorHandling' has a Standard Cyclomatic Complexity of 5 (Highest = 10).
+src/com/snow/search/facade/SnowErrorHandling.java:16:	Field comments are required
+src/com/snow/search/facade/SnowErrorHandling.java:16:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/facade/SnowErrorHandling.java:16:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowErrorHandling.java:16:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/facade/SnowErrorHandling.java:18:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:18:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowErrorHandling.java:18:	The method 'errorHandling' has a Modified Cyclomatic Complexity of 10.
+src/com/snow/search/facade/SnowErrorHandling.java:18:	The method 'errorHandling' has a Standard Cyclomatic Complexity of 10.
+src/com/snow/search/facade/SnowErrorHandling.java:18:	The method 'errorHandling(RequestDTO)' has a NCSS line count of 40.
+src/com/snow/search/facade/SnowErrorHandling.java:18:	The method 'errorHandling(RequestDTO)' has a cyclomatic complexity of 24.
+src/com/snow/search/facade/SnowErrorHandling.java:18:	The method 'errorHandling(RequestDTO)' has an NPath complexity of 19200
+src/com/snow/search/facade/SnowErrorHandling.java:19:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:20:	Avoid declaring a variable if it is unreferenced before a possible exit point.
+src/com/snow/search/facade/SnowErrorHandling.java:20:	Avoid unused local variables such as 'userId'.
+src/com/snow/search/facade/SnowErrorHandling.java:20:	Found 'DU'-anomaly for variable 'userId' (lines '20'-'77').
+src/com/snow/search/facade/SnowErrorHandling.java:20:	Local variable 'userId' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:21:	Local variable 'queryParam' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:22:	Local variable 'userRole' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:23:	Local variable 'searchType' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:24:	Local variable 'maxRows' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:25:	Local variable 'errorhandlerDTOs' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:26:	Found 'DU'-anomaly for variable 'values' (lines '26'-'77').
+src/com/snow/search/facade/SnowErrorHandling.java:26:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:27:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowErrorHandling.java:28:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:29:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:31:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:31:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:34:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:34:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/facade/SnowErrorHandling.java:35:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:36:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:36:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:37:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:37:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:41:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
+src/com/snow/search/facade/SnowErrorHandling.java:42:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:44:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:45:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:51:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:53:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:53:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:58:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:58:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:59:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:60:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:63:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:68:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:69:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:69:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:74:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:79:	Found 'UR'-anomaly for variable 'string' (lines '79'-'86').
+src/com/snow/search/facade/SnowErrorHandling.java:79:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:79:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowErrorHandling.java:79:	The method 'searchtypeCheck(RequestDTO)' has a NCSS line count of 15.
+src/com/snow/search/facade/SnowErrorHandling.java:80:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:81:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:82:	Local variable 'inputSearchType' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:83:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Avoid excessively long variable names like supportedSearchTypes
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Found 'DU'-anomaly for variable 'supportedSearchTypes' (lines '84'-'96').
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Local variable 'supportedSearchTypes' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:84:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:85:	Local variable 'string' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:86:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:86:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/com/snow/search/facade/SnowErrorHandling.java:89:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:90:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:98:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:98:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowErrorHandling.java:99:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:100:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:101:	Local variable 'inputMode' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:101:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:101:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/com/snow/search/facade/SnowErrorHandling.java:102:	Local variable 'errorhandling' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:103:	Local variable 'supportedModes' could be declared final
+src/com/snow/search/facade/SnowErrorHandling.java:103:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:103:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowErrorHandling.java:103:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:104:	Avoid unnecessary comparisons in boolean expressions
+src/com/snow/search/facade/SnowErrorHandling.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:104:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:104:	Useless parentheses.
+src/com/snow/search/facade/SnowErrorHandling.java:105:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowErrorHandling.java:106:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:14:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowSearchFacade.java:14:	Header comments are required
+src/com/snow/search/facade/SnowSearchFacade.java:14:	Possible God Class (WMC=56, ATFD=75, TCC=16.667%)
+src/com/snow/search/facade/SnowSearchFacade.java:14:	The class 'SnowSearchFacade' has a Modified Cyclomatic Complexity of 6 (Highest = 16).
+src/com/snow/search/facade/SnowSearchFacade.java:14:	The class 'SnowSearchFacade' has a Standard Cyclomatic Complexity of 6 (Highest = 16).
+src/com/snow/search/facade/SnowSearchFacade.java:15:	Field comments are required
+src/com/snow/search/facade/SnowSearchFacade.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/snow/search/facade/SnowSearchFacade.java:15:	To avoid mistakes add a comment at the beginning of the snowSearchUtils field if you want a default access modifier
+src/com/snow/search/facade/SnowSearchFacade.java:15:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowSearchFacade.java:17:	Found 'UR'-anomaly for variable 'role' (lines '17'-'37').
+src/com/snow/search/facade/SnowSearchFacade.java:17:	Parameter 'reqDto' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:17:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowSearchFacade.java:17:	The method 'fetchUserRoles(RequestDTO)' has a NCSS line count of 27.
+src/com/snow/search/facade/SnowSearchFacade.java:17:	The method 'fetchUserRoles(RequestDTO)' has a cyclomatic complexity of 13.
+src/com/snow/search/facade/SnowSearchFacade.java:19:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:20:	Local variable 'searchType' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:21:	Found 'DD'-anomaly for variable 'roleValue' (lines '21'-'23').
+src/com/snow/search/facade/SnowSearchFacade.java:21:	Found 'DD'-anomaly for variable 'roleValue' (lines '21'-'25').
+src/com/snow/search/facade/SnowSearchFacade.java:22:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:22:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:22:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:23:	Found 'DU'-anomaly for variable 'roleValue' (lines '23'-'48').
+src/com/snow/search/facade/SnowSearchFacade.java:23:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:25:	Found 'DU'-anomaly for variable 'roleValue' (lines '25'-'48').
+src/com/snow/search/facade/SnowSearchFacade.java:25:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:27:	Local variable 'userRoles' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:28:	Found 'DD'-anomaly for variable 'response' (lines '28'-'31').
+src/com/snow/search/facade/SnowSearchFacade.java:28:	Found 'DD'-anomaly for variable 'response' (lines '28'-'45').
+src/com/snow/search/facade/SnowSearchFacade.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:29:	Useless parentheses.
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:30:	Useless parentheses.
+src/com/snow/search/facade/SnowSearchFacade.java:31:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/com/snow/search/facade/SnowSearchFacade.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'37').
+src/com/snow/search/facade/SnowSearchFacade.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'40').
+src/com/snow/search/facade/SnowSearchFacade.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'42').
+src/com/snow/search/facade/SnowSearchFacade.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'44').
+src/com/snow/search/facade/SnowSearchFacade.java:34:	Found 'DU'-anomaly for variable 'appender' (lines '34'-'48').
+src/com/snow/search/facade/SnowSearchFacade.java:34:	Local variable 'appender' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:36:	Local variable 'role' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:37:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowSearchFacade.java:38:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowSearchFacade.java:40:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:40:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:42:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowSearchFacade.java:44:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowSearchFacade.java:50:	Avoid really long methods.
+src/com/snow/search/facade/SnowSearchFacade.java:50:	Found 'UR'-anomaly for variable 'eachSearchType' (lines '50'-'82').
+src/com/snow/search/facade/SnowSearchFacade.java:50:	Found 'UR'-anomaly for variable 'multiSearchType' (lines '50'-'59').
+src/com/snow/search/facade/SnowSearchFacade.java:50:	Parameter 'reqDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:50:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowSearchFacade.java:50:	The method 'fetchAll' has a Modified Cyclomatic Complexity of 16.
+src/com/snow/search/facade/SnowSearchFacade.java:50:	The method 'fetchAll' has a Standard Cyclomatic Complexity of 16.
+src/com/snow/search/facade/SnowSearchFacade.java:50:	The method 'fetchAll(RequestDTO)' has a NCSS line count of 79.
+src/com/snow/search/facade/SnowSearchFacade.java:50:	The method 'fetchAll(RequestDTO)' has a cyclomatic complexity of 40.
+src/com/snow/search/facade/SnowSearchFacade.java:50:	The method 'fetchAll(RequestDTO)' has an NPath complexity of 27814
+src/com/snow/search/facade/SnowSearchFacade.java:51:	Local variable 'attributes' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:52:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:53:	Local variable 'searchTypes' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:54:	Local variable 'facetselected' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:55:	Avoid variables with short names like sb
+src/com/snow/search/facade/SnowSearchFacade.java:55:	Found 'DU'-anomaly for variable 'sb' (lines '55'-'156').
+src/com/snow/search/facade/SnowSearchFacade.java:55:	Local variable 'sb' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:56:	Found 'DU'-anomaly for variable 'facetBuilder' (lines '56'-'156').
+src/com/snow/search/facade/SnowSearchFacade.java:56:	Local variable 'facetBuilder' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:57:	Avoid using Literals in Conditional Statements
+src/com/snow/search/facade/SnowSearchFacade.java:57:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:58:	Local variable 'multiSearchType' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:59:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literals. Use a single append with a single combined String.
+src/com/snow/search/facade/SnowSearchFacade.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:61:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:65:	An empty statement (semicolon) not part of a loop
+src/com/snow/search/facade/SnowSearchFacade.java:67:	Local variable 'finalFilterType' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:68:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:68:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:68:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:68:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:70:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:75:	The String literal "filter.type.all" appears 6 times in this file; the first occurrence is on line 75
+src/com/snow/search/facade/SnowSearchFacade.java:76:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:77:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:78:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:80:	Local variable 'eachSearchType' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:82:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:83:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:83:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:84:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:85:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:85:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:85:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:87:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:92:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:93:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:95:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:96:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:98:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:99:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:99:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:99:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:99:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:99:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:99:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:101:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:107:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:109:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:110:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:112:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:112:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:113:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:113:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:113:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:113:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:115:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:121:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:123:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:124:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:126:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:126:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:127:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:127:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:127:	The null check here is misplaced; if the variable is null there will be a NullPointerException
+src/com/snow/search/facade/SnowSearchFacade.java:129:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:135:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:137:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:138:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:140:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:142:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:144:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowSearchFacade.java:145:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:147:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:147:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:149:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:154:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowSearchFacade.java:158:	Found 'UR'-anomaly for variable 'selectedFacet' (lines '158'-'160').
+src/com/snow/search/facade/SnowSearchFacade.java:158:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:158:	Parameter 'facetBuilder' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:158:	Parameter 'facetselected' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:159:	Local variable 'selectedFacet' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:160:	Local variable 'splitedFacet' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:162:	Avoid appending characters as strings in StringBuffer.append.
+src/com/snow/search/facade/SnowSearchFacade.java:164:	Local variable 'finalfacetValue' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:169:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:169:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:169:	Parameter 'user' is not assigned and could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:169:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowSearchFacade.java:171:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/facade/SnowSearchFacade.java:171:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/facade/SnowSearchFacade.java:172:	Local variable 'queryResponse' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:13:	Each class should declare at least one constructor
+src/com/snow/search/facade/SnowUtiltyFunctions.java:13:	Header comments are required
+src/com/snow/search/facade/SnowUtiltyFunctions.java:14:	Field comments are required
+src/com/snow/search/facade/SnowUtiltyFunctions.java:14:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/facade/SnowUtiltyFunctions.java:14:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowUtiltyFunctions.java:14:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:15:	Field comments are required
+src/com/snow/search/facade/SnowUtiltyFunctions.java:15:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:15:	To avoid mistakes add a comment at the beginning of the snowSearchUtils field if you want a default access modifier
+src/com/snow/search/facade/SnowUtiltyFunctions.java:15:	Use explicit scoping instead of the default package private level
+src/com/snow/search/facade/SnowUtiltyFunctions.java:17:	Found 'UR'-anomaly for variable 'role' (lines '17'-'37').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:17:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:17:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowUtiltyFunctions.java:17:	The method 'fetchUserRoles(RequestDTO)' has a NCSS line count of 27.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:17:	The method 'fetchUserRoles(RequestDTO)' has a cyclomatic complexity of 13.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:18:	Local variable 'searchType' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:19:	Found 'DD'-anomaly for variable 'roleValue' (lines '19'-'24').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:19:	Found 'DD'-anomaly for variable 'roleValue' (lines '19'-'26').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:20:	Found 'DD'-anomaly for variable 'response' (lines '20'-'31').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:20:	Found 'DD'-anomaly for variable 'response' (lines '20'-'45').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:22:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:23:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:23:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:23:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:24:	Found 'DU'-anomaly for variable 'roleValue' (lines '24'-'49').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:24:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:26:	Found 'DU'-anomaly for variable 'roleValue' (lines '26'-'49').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:26:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:28:	Local variable 'userRoles' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:29:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:29:	Useless parentheses.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:30:	Useless parentheses.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:31:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'37').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'40').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'42').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:33:	Found 'DD'-anomaly for variable 'finalUser' (lines '33'-'44').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:34:	Found 'DU'-anomaly for variable 'appender' (lines '34'-'49').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:34:	Local variable 'appender' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:35:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:36:	Local variable 'role' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:37:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowUtiltyFunctions.java:38:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowUtiltyFunctions.java:40:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:40:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:41:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:42:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowUtiltyFunctions.java:44:	Prefer StringBuffer over += for concatenating strings
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	Found 'UR'-anomaly for variable 'multiSearchType' (lines '51'-'58').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	Found 'UR'-anomaly for variable 'searchValue' (lines '51'-'71').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	Parameter 'searchTypes' is not assigned and could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	Public method and constructor comments are required
+src/com/snow/search/facade/SnowUtiltyFunctions.java:51:	The method 'fetchSearchTypeUserFilter(List, RequestDTO)' has a NCSS line count of 22.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:53:	Local variable 'attributes' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:55:	Found 'DU'-anomaly for variable 'values' (lines '55'-'84').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:55:	Local variable 'values' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:56:	Avoid variables with short names like sb
+src/com/snow/search/facade/SnowUtiltyFunctions.java:56:	Local variable 'sb' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:57:	Local variable 'multiSearchType' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:58:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literals. Use a single append with a single combined String.
+src/com/snow/search/facade/SnowUtiltyFunctions.java:65:	An empty statement (semicolon) not part of a loop
+src/com/snow/search/facade/SnowUtiltyFunctions.java:68:	An empty statement (semicolon) not part of a loop
+src/com/snow/search/facade/SnowUtiltyFunctions.java:69:	Found 'DU'-anomaly for variable 'finalFilterType' (lines '69'-'84').
+src/com/snow/search/facade/SnowUtiltyFunctions.java:69:	Local variable 'finalFilterType' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:70:	Local variable 'searchValue' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:71:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowUtiltyFunctions.java:71:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowUtiltyFunctions.java:72:	Position literals first in String comparisons for EqualsIgnoreCase
+src/com/snow/search/facade/SnowUtiltyFunctions.java:73:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowUtiltyFunctions.java:76:	Local variable 'specialUser' could be declared final
+src/com/snow/search/facade/SnowUtiltyFunctions.java:78:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:23:	Each class should declare at least one constructor
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:23:	Header comments are required
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:24:	Field comments are required
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:24:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:24:	Use explicit scoping instead of the default package private level
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:24:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	Found 'UR'-anomaly for variable 'entry' (lines '28'-'40').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	Found 'UR'-anomaly for variable 'string' (lines '28'-'44').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	Parameter 'query' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	Public method and constructor comments are required
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:28:	The method 'setMultipleFacets(AttributesDTO, SolrQuery)' has a NCSS line count of 18.
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:29:	Avoid unnecessary comparisons in boolean expressions
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:30:	Avoid excessively long variable names like facetFieldMapValue
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:30:	Local variable 'facetFieldMapValue' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:31:	Local variable 'fieldNames' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:31:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:33:	If you run in Java5 or newer and have concurrent access, you should use the ConcurrentHashMap implementation
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:33:	Local variable 'facetFieldNames' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:37:	Local variable 'solrParams' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:38:	Local variable 'facetField' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:39:	Local variable 'entry' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:39:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:40:	Local variable 'fieldValue' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:41:	Found 'DD'-anomaly for variable 'value' (lines '41'-'41').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:41:	Found 'DD'-anomaly for variable 'value' (lines '41'-'44').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:41:	Found 'DU'-anomaly for variable 'value' (lines '41'-'51').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:42:	Found 'DD'-anomaly for variable 'param' (lines '42'-'42').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:42:	Found 'DU'-anomaly for variable 'param' (lines '42'-'51').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:42:	Local variable 'param' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:43:	Local variable 'string' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:53:	Parameter 'attributesDTO' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:53:	Parameter 'requestDTO' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:53:	Public method and constructor comments are required
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:53:	The method 'autoFillQuerySearch(RequestDTO, AttributesDTO)' has a NCSS line count of 38.
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:55:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:56:	Found 'DD'-anomaly for variable 'jsonResponse' (lines '56'-'87').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:57:	Local variable 'activeProperty' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:58:	Found 'DD'-anomaly for variable 'values' (lines '58'-'59').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:60:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:60:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:61:	Local variable 'solr' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:62:	Local variable 'query' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:65:	The String literal "json" appears 4 times in this file; the first occurrence is on line 65
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:66:	Local variable 'filterType' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:67:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:68:	Local variable 'specialUser' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:69:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:82:	Local variable 'req' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:83:	Avoid excessively long variable names like rawJsonResponseParser
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:83:	Local variable 'rawJsonResponseParser' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:86:	Local variable 'resp' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:86:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:87:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:88:	There is log block not surrounded by if
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:89:	Local variable 'mapper' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:90:	Local variable 'node' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:91:	Avoid excessively long variable names like responseHeaderNode
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:91:	Local variable 'responseHeaderNode' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:91:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:92:	Local variable 'qTime' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:92:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:93:	There is log block not surrounded by if
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:97:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:97:	Parameter 'maxRows' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:97:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:97:	Public method and constructor comments are required
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:97:	The method 'autoSuggestTermsSearch(String, Integer, AttributesDTO)' has a NCSS line count of 45.
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:100:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:101:	Local variable 'activeProperty' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:102:	Found 'DD'-anomaly for variable 'values' (lines '102'-'105').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:103:	Found 'DD'-anomaly for variable 'jsonResponse' (lines '103'-'138').
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:106:	Avoid excessively long variable names like solrjClientConnectService
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:106:	Local variable 'solrjClientConnectService' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:107:	Local variable 'solr' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:108:	Local variable 'query' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:110:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:111:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:111:	Useless parentheses.
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:112:	When doing a String.toLowerCase()/toUpperCase() call, use a Locale
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:113:	Local variable 'filterType' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:114:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:115:	Local variable 'specialUser' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:116:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:125:	Local variable 'facetSort' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:125:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:126:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:127:	Local variable 'minCount' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:127:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:128:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:129:	Local variable 'rows' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:129:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:130:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:133:	Local variable 'req' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:134:	Avoid excessively long variable names like rawJsonResponseParser
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:134:	Local variable 'rawJsonResponseParser' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:137:	Local variable 'resp' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:137:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:138:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:139:	There is log block not surrounded by if
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:140:	Local variable 'mapper' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:141:	Local variable 'node' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:142:	Avoid excessively long variable names like responseHeaderNode
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:142:	Local variable 'responseHeaderNode' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:142:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:143:	Local variable 'qTime' could be declared final
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:143:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:143:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:144:	There is log block not surrounded by if
+src/com/snow/search/service/AutoSuggestSolrjClientConnectService.java:145:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/SolrjClientConnectService.java:20:	Each class should declare at least one constructor
+src/com/snow/search/service/SolrjClientConnectService.java:20:	Header comments are required
+src/com/snow/search/service/SolrjClientConnectService.java:21:	Field comments are required
+src/com/snow/search/service/SolrjClientConnectService.java:21:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
+src/com/snow/search/service/SolrjClientConnectService.java:21:	Use explicit scoping instead of the default package private level
+src/com/snow/search/service/SolrjClientConnectService.java:21:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Parameter 'queryParam' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Parameter 'rows' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Parameter 'start' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Parameter 'user' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:23:	Public method and constructor comments are required
+src/com/snow/search/service/SolrjClientConnectService.java:23:	The method 'querySearch(String, Integer, Integer, String, AttributesDTO)' has a NCSS line count of 46.
+src/com/snow/search/service/SolrjClientConnectService.java:23:	The method 'querySearch(String, Integer, Integer, String, AttributesDTO)' has a cyclomatic complexity of 11.
+src/com/snow/search/service/SolrjClientConnectService.java:25:	Local variable 'snowSearchUtils' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:26:	Local variable 'values' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:27:	Local variable 'solr' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:28:	Local variable 'query' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:33:	Local variable 'filterType' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:34:	Local variable 'facetValue' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:35:	Local variable 'activeProperty' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:36:	Local variable 'specialUser' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:37:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/SolrjClientConnectService.java:38:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/SolrjClientConnectService.java:48:	Avoid if (x != y) ..; else ..;
+src/com/snow/search/service/SolrjClientConnectService.java:67:	There is log block not surrounded by if
+src/com/snow/search/service/SolrjClientConnectService.java:68:	Local variable 'req' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:69:	Avoid excessively long variable names like rawJsonResponseParser
+src/com/snow/search/service/SolrjClientConnectService.java:69:	Local variable 'rawJsonResponseParser' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:72:	Local variable 'resp' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:72:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/SolrjClientConnectService.java:73:	Local variable 'jsonResponse' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:73:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/SolrjClientConnectService.java:74:	There is log block not surrounded by if
+src/com/snow/search/service/SolrjClientConnectService.java:75:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/SolrjClientConnectService.java:79:	Parameter 'values' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:79:	Public method and constructor comments are required
+src/com/snow/search/service/SolrjClientConnectService.java:80:	Found 'DD'-anomaly for variable 'solr' (lines '80'-'82').
+src/com/snow/search/service/SolrjClientConnectService.java:81:	Local variable 'zkHostString' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:89:	Found 'UR'-anomaly for variable 'entry' (lines '89'-'101').
+src/com/snow/search/service/SolrjClientConnectService.java:89:	Found 'UR'-anomaly for variable 'string' (lines '89'-'105').
+src/com/snow/search/service/SolrjClientConnectService.java:89:	Parameter 'attributes' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:89:	Parameter 'query' is not assigned and could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:89:	Public method and constructor comments are required
+src/com/snow/search/service/SolrjClientConnectService.java:89:	The method 'setMultipleFacets(AttributesDTO, SolrQuery)' has a NCSS line count of 18.
+src/com/snow/search/service/SolrjClientConnectService.java:90:	Avoid unnecessary comparisons in boolean expressions
+src/com/snow/search/service/SolrjClientConnectService.java:91:	Avoid excessively long variable names like facetFieldMapValue
+src/com/snow/search/service/SolrjClientConnectService.java:91:	Local variable 'facetFieldMapValue' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:92:	Local variable 'fieldNames' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:92:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/search/service/SolrjClientConnectService.java:94:	If you run in Java5 or newer and have concurrent access, you should use the ConcurrentHashMap implementation
+src/com/snow/search/service/SolrjClientConnectService.java:94:	Local variable 'facetFieldNames' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:98:	Local variable 'solrParams' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:99:	Local variable 'facetField' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:100:	Local variable 'entry' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:100:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/service/SolrjClientConnectService.java:101:	Local variable 'fieldValue' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:102:	Found 'DD'-anomaly for variable 'value' (lines '102'-'102').
+src/com/snow/search/service/SolrjClientConnectService.java:102:	Found 'DD'-anomaly for variable 'value' (lines '102'-'105').
+src/com/snow/search/service/SolrjClientConnectService.java:102:	Found 'DU'-anomaly for variable 'value' (lines '102'-'112').
+src/com/snow/search/service/SolrjClientConnectService.java:103:	Found 'DD'-anomaly for variable 'param' (lines '103'-'103').
+src/com/snow/search/service/SolrjClientConnectService.java:103:	Found 'DU'-anomaly for variable 'param' (lines '103'-'112').
+src/com/snow/search/service/SolrjClientConnectService.java:103:	Local variable 'param' could be declared final
+src/com/snow/search/service/SolrjClientConnectService.java:104:	Local variable 'string' could be declared final
+src/com/snow/util/SnowUtils.java:13:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/com/snow/util/SnowUtils.java:13:	Header comments are required
+src/com/snow/util/SnowUtils.java:15:	Field comments are required
+src/com/snow/util/SnowUtils.java:17:	Avoid using redundant field initializer for 'prop'
+src/com/snow/util/SnowUtils.java:17:	Field comments are required
+src/com/snow/util/SnowUtils.java:18:	Avoid using redundant field initializer for 'lastModified'
+src/com/snow/util/SnowUtils.java:18:	Field comments are required
+src/com/snow/util/SnowUtils.java:20:	A method/constructor should not explicitly throw java.lang.Exception
+src/com/snow/util/SnowUtils.java:20:	Public method and constructor comments are required
+src/com/snow/util/SnowUtils.java:22:	Local variable 'mapper' could be declared final
+src/com/snow/util/SnowUtils.java:26:	Public method and constructor comments are required
+src/com/snow/util/SnowUtils.java:26:	The method 'getPropertyValues()' has a NCSS line count of 20.
+src/com/snow/util/SnowUtils.java:28:	Local variable 'file' could be declared final
+src/com/snow/util/SnowUtils.java:30:	Found 'DD'-anomaly for variable 'fis' (lines '30'-'34').
+src/com/snow/util/SnowUtils.java:30:	Found 'DU'-anomaly for variable 'fis' (lines '30'-'54').
+src/com/snow/util/SnowUtils.java:32:	Useless parentheses.
+src/com/snow/util/SnowUtils.java:34:	Avoid instantiating FileInputStream, FileOutputStream, FileReader, or FileWriter
+src/com/snow/util/SnowUtils.java:38:	Avoid using if statements without curly braces
+src/com/snow/util/SnowUtils.java:39:	This statement should have braces
+src/com/snow/util/SnowUtils.java:40:	A method should have only one exit point, and that should be the last statement in the method
+src/com/snow/util/SnowUtils.java:41:	Useless parentheses.
+src/com/snow/util/SnowUtils.java:43:	A method should have only one exit point, and that should be the last statement in the method
+src/com/snow/util/SnowUtils.java:46:	Local variable 'classLoader' could be declared final
+src/com/snow/util/SnowUtils.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/com/snow/util/SnowUtils.java:47:	Local variable 'inputStream' could be declared final
+src/com/snow/util/SnowUtils.java:47:	Potential violation of Law of Demeter (object not created locally)
