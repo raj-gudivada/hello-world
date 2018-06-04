@@ -21,7 +21,7 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class AutoSuggestSolrjClientConnectService {
-	final static Logger logger = Logger.getLogger(AutoSuggestSolrjClientConnectService.class);
+	final static Logger LOGGER = Logger.getLogger(AutoSuggestSolrjClientConnectService.class);
 
 	// AutoFill Query Module
 
@@ -85,12 +85,16 @@ public class AutoSuggestSolrjClientConnectService {
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
-		logger.info("Solr Query :" + query.toString());
+		if (null != query.toString()) {
+			LOGGER.info("Solr Query :" + query.toString());
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
-		logger.info("Query Time :" + qTime + "mSec");
+		if (null != qTime) {
+			LOGGER.info("Query Time :" + qTime + "mSec");
+		}
 		return jsonResponse;
 	}
 

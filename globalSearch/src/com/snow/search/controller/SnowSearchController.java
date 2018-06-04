@@ -29,7 +29,7 @@ import com.snow.util.SnowUtils;
 
 @RestController
 public class SnowSearchController {
-	
+
 	public final static Logger LOG = Logger.getLogger(SnowSearchController.class);
 
 	@RequestMapping(value = "/basicSearch", method = RequestMethod.POST, consumes = "application/json")
@@ -48,7 +48,7 @@ public class SnowSearchController {
 					ite.remove();
 			}
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
-				MessageDTO messageDTO = SetResponseDTO();
+				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
 				SnowSearchFacade searchFacade = new SnowSearchFacade();
@@ -86,7 +86,7 @@ public class SnowSearchController {
 		return queryResponse;
 	}
 
-	private MessageDTO SetResponseDTO() throws IOException {
+	private MessageDTO populateResponseDTO() throws IOException {
 		MessageDTO messageDTO = new MessageDTO();
 		Properties values = SnowUtils.getPropertyValues();
 		messageDTO.setResponseCode(values.getProperty("response.success.responseCode"));
@@ -141,12 +141,14 @@ public class SnowSearchController {
 					ite.remove();
 			}
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
-				MessageDTO messageDTO = SetResponseDTO();
+				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
 				attributes = searchFacade.fetchAll(requestDTO);
 				queryResponse = searchFacade.getQuerySearch(requestDTO, user, attributes);
-				LOG.info("final Response:" + queryResponse);
+				if (null != queryResponse.toString()) {
+					LOG.info("final Response:" + queryResponse);
+				}
 			}
 		} catch (Exception e) {
 			LOG.error("Some error occured ! Please check.", e);
@@ -184,7 +186,7 @@ public class SnowSearchController {
 			List<ErrorhandlerDTO> errorhandlerDTOs = errorHandling.errorHandling(requestDTO);
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
 				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
-				MessageDTO messageDTO = SetResponseDTO();
+				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
 				// AutoFill module
@@ -243,7 +245,7 @@ public class SnowSearchController {
 			List<ErrorhandlerDTO> errorhandlerDTOs = errorHandling.errorHandling(requestDTO);
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
 				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
-				MessageDTO messageDTO = SetResponseDTO();
+				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
 				// AutoFill module

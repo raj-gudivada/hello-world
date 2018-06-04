@@ -547,26 +547,20 @@ src/com/snow/search/facade/SnowAutoSuggestFacade.java:230:	Local variable 'snowU
 src/com/snow/search/facade/SnowAutoSuggestFacade.java:231:	Potential violation of Law of Demeter (object not created locally)
 src/com/snow/search/facade/SnowAutoSuggestFacade.java:235:	Potential violation of Law of Demeter (object not created locally)
 src/com/snow/search/facade/SnowAutoSuggestFacade.java:235:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:3:	Avoid unused imports such as 'java.io.IOException'
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:5:	Avoid unused imports such as 'java.util.Properties'
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:15:	Avoid unused imports such as 'com.snow.search.dto.RequestDTO'
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:16:	Avoid unused imports such as 'com.snow.util.SnowUtils'
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:18:	Each class should declare at least one constructor
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:18:	Header comments are required
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Field comments are required
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	To avoid mistakes add a comment at the beginning of the logger field if you want a default access modifier
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Use explicit scoping instead of the default package private level
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:19:	Variables that are final and static should be all capitals, 'logger' is not all capitals.
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Parameter 'requestDTO' is not assigned and could be declared final
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Public method and constructor comments are required
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:22:	Found 'DD'-anomaly for variable 'errorhandling' (lines '22'-'28').
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:23:	Local variable 'snowSearchUtils' could be declared final
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:24:	Local variable 'facetSelection' could be declared final
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:25:	Found 'DU'-anomaly for variable 'values' (lines '25'-'34').
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:25:	Local variable 'values' could be declared final
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Potential violation of Law of Demeter (object not created locally)
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Potential violation of Law of Demeter (object not created locally)
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Substitute calls to size() == 0 (or size() != 0, size() > 0, size() < 1) with calls to isEmpty()
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:27:	Potential violation of Law of Demeter (object not created locally)
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:29:	Potential violation of Law of Demeter (object not created locally)
-src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:30:	Potential violation of Law of Demeter (object not created locally)
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Comment is too large: Line too long
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:21:	Comment is too large: Too many lines
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:26:	Comment is too large: Line too long
+src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:29:	Comment is too large: Line too long
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Found 'UR'-anomaly for variable 'errorhandlerDTO' (lines '36'-'42').
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Parameter 'errorhandlerDTOs' is not assigned and could be declared final
 src/com/snow/search/facade/SnowBasicSearchErrorHandling.java:36:	Parameter 'messageDTO' is not assigned and could be declared final
@@ -1143,6 +1137,7 @@ src/com/snow/search/service/SolrjClientConnectService.java:103:	Found 'DD'-anoma
 src/com/snow/search/service/SolrjClientConnectService.java:103:	Found 'DU'-anomaly for variable 'param' (lines '103'-'112').
 src/com/snow/search/service/SolrjClientConnectService.java:103:	Local variable 'param' could be declared final
 src/com/snow/search/service/SolrjClientConnectService.java:104:	Local variable 'string' could be declared final
+src/com/snow/util/SnowUtils.java:11:	Avoid unused imports such as 'com.fasterxml.jackson.databind.ObjectMapper'
 src/com/snow/util/SnowUtils.java:13:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
 src/com/snow/util/SnowUtils.java:13:	Header comments are required
 src/com/snow/util/SnowUtils.java:15:	Field comments are required
@@ -1150,9 +1145,7 @@ src/com/snow/util/SnowUtils.java:17:	Avoid using redundant field initializer for
 src/com/snow/util/SnowUtils.java:17:	Field comments are required
 src/com/snow/util/SnowUtils.java:18:	Avoid using redundant field initializer for 'lastModified'
 src/com/snow/util/SnowUtils.java:18:	Field comments are required
-src/com/snow/util/SnowUtils.java:20:	A method/constructor should not explicitly throw java.lang.Exception
-src/com/snow/util/SnowUtils.java:20:	Public method and constructor comments are required
-src/com/snow/util/SnowUtils.java:22:	Local variable 'mapper' could be declared final
+src/com/snow/util/SnowUtils.java:20:	Comment is too large: Line too long
 src/com/snow/util/SnowUtils.java:26:	Public method and constructor comments are required
 src/com/snow/util/SnowUtils.java:26:	The method 'getPropertyValues()' has a NCSS line count of 20.
 src/com/snow/util/SnowUtils.java:28:	Local variable 'file' could be declared final

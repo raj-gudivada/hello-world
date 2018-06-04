@@ -16,9 +16,9 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class SnowBasicSearchErrorHandling extends SnowErrorHandling {
-	final static Logger logger = Logger.getLogger(SnowBasicSearchErrorHandling.class);
+	final static Logger LOGGER = Logger.getLogger(SnowBasicSearchErrorHandling.class);
 
-	public ErrorhandlerDTO basicSearchFacetErrorHandling(RequestDTO requestDTO) throws IOException {
+	/*public ErrorhandlerDTO basicSearchFacetErrorHandling(RequestDTO requestDTO) throws IOException {
 		ErrorhandlerDTO errorhandling = null;
 		SnowUtils snowSearchUtils = new SnowUtils();
 		List<String> facetSelection = requestDTO.getFacetSelection();
@@ -31,7 +31,7 @@ public class SnowBasicSearchErrorHandling extends SnowErrorHandling {
 		}
 		// }
 		return errorhandling;
-	}
+	}*/
 
 	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs, MessageDTO messageDTO)
 			throws JsonProcessingException, JSONException {

@@ -13,7 +13,7 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class SnowErrorHandling {
-	final static Logger logger = Logger.getLogger(SnowErrorHandling.class);
+	final static Logger LOGGER = Logger.getLogger(SnowErrorHandling.class);
 
 	public List<ErrorhandlerDTO> errorHandling(RequestDTO requestDTO) throws IOException {
 		SnowUtils snowSearchUtils = new SnowUtils();
