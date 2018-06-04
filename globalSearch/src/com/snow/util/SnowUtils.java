@@ -25,35 +25,32 @@ public class SnowUtils {
 
 	public static Properties getPropertyValues() throws IOException {
 
-		
-			File file = new File(File.separator + "data" + File.separator + "snowsearch" + File.separator
-					+ "searchConigurations" + File.separator + "config.properties");
-			InputStream fis = null;
+		File file = new File(File.separator + "data" + File.separator + "snowsearch" + File.separator
+				+ "searchConigurations" + File.separator + "config.properties");
+		InputStream fis = null;
 
-			if (file.exists() && ((file.lastModified() != lastModified))) {
+		if (file.exists() && ((file.lastModified() != lastModified))) {
 
-				fis = new FileInputStream(file);
-				prop = new Properties();
-				prop.load(fis);
-				lastModified = file.lastModified();
-				if (fis != null)
-					fis.close();
-				return prop;
-			} else if (file.exists() && ((file.lastModified() == lastModified))) {
+			fis = new FileInputStream(file);
+			prop = new Properties();
+			prop.load(fis);
+			lastModified = file.lastModified();
+			if (fis != null)
+				fis.close();
+			return prop;
+		} else if (file.exists() && ((file.lastModified() == lastModified))) {
 
-				return prop;
-			} else {
+			return prop;
+		} else {
 
-				ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-				InputStream inputStream = classLoader.getResourceAsStream("config.properties");
-				prop = new Properties();
+			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+			InputStream inputStream = classLoader.getResourceAsStream("config.properties");
+			prop = new Properties();
 
-				prop.load(inputStream);
-				return prop;
-			}
+			prop.load(inputStream);
+			return prop;
+		}
 
-		
-		
 	}
 
 }
