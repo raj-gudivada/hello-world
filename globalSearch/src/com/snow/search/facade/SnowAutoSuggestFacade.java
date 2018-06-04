@@ -13,7 +13,7 @@ import com.snow.search.service.AutoSuggestSolrjClientConnectService;
 import com.snow.util.SnowUtils;;
 
 public class SnowAutoSuggestFacade {
-	final static Logger logger = Logger.getLogger(SnowAutoSuggestFacade.class);
+	final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
 
 	public AttributesDTO fetchAutoFillFields(RequestDTO requestDTO) throws IOException {
 		SnowUtils snowSearchUtils = new SnowUtils();
@@ -26,7 +26,7 @@ public class SnowAutoSuggestFacade {
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 						| searchValue.equalsIgnoreCase("ALL")) {
-					System.out.println("searchValue - " + searchValue);
+					LOG.info("searchValue - " + searchValue);
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
@@ -66,7 +66,7 @@ public class SnowAutoSuggestFacade {
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 						| searchValue.equalsIgnoreCase("ALL")) {
-					System.out.println("searchValue - " + searchValue);
+					LOG.info("searchValue - " + searchValue);
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
 					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
