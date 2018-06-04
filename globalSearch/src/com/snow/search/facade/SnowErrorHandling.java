@@ -96,7 +96,7 @@ public class SnowErrorHandling {
 		String inputMode = requestDTO.getMode().toUpperCase();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
 		List<String> supportedModes = Arrays.asList(values.getProperty("supported.mode").split(","));
-		if ((supportedModes.contains(inputMode)) == false) {
+		if (supportedModes.contains(inputMode) == false) {
 			errorhandling.setErrorMessage(values.getProperty("errorMessage.mode"));
 			errorhandling.setErrorCode(values.getProperty("errorcode.mode"));
 		}

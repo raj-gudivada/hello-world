@@ -23,7 +23,7 @@ public class SnowUtils {
 		String fileName = File.separator + "data" + File.separator + "snowsearch" + File.separator
 				+ "searchConigurations" + File.separator + "config.properties";
 
-		if (file.exists() && ((file.lastModified() != lastModified))) {
+		if (file.exists() && file.lastModified() != lastModified) {
 
 			fis = Files.newInputStream(Paths.get(fileName));
 			prop = new Properties();
@@ -32,7 +32,7 @@ public class SnowUtils {
 			if (fis != null)
 				fis.close();
 			return prop;
-		} else if (file.exists() && ((file.lastModified() == lastModified))) {
+		} else if (file.exists() && file.lastModified() == lastModified) {
 
 			return prop;
 		} else {

@@ -25,7 +25,7 @@ public class SnowSearchFacade {
 		}
 		List<String> userRoles = reqDto.getUserRoles();
 		String response = null;
-		if ((userRoles.isEmpty())
+		if (userRoles.isEmpty()
 				|| (!userRoles.isEmpty() && userRoles.size() == 1 && userRoles.get(0).trim().equals(""))) {
 			response = null;
 		} else {

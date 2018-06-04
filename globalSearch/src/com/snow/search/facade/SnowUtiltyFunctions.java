@@ -30,7 +30,7 @@ public class SnowUtiltyFunctions {
 			roleValue = values.getProperty("acl.all.roles");
 		}
 		List<String> userRoles = requestDTO.getUserRoles();
-		if ((userRoles.isEmpty())
+		if (userRoles.isEmpty()
 				|| (!userRoles.isEmpty() && userRoles.size() == 1 && userRoles.get(0).trim().equals(""))) {
 			response = null;
 		} else {

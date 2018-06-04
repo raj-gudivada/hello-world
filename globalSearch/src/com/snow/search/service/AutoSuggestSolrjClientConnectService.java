@@ -109,7 +109,7 @@ public class AutoSuggestSolrjClientConnectService {
 		SolrQuery query = new SolrQuery();
 		query.setFacet(attributes.getFacet());
 		query.setQuery(values.getProperty("autoSuggest.terms.q"));
-		query.add("facet.field", (values.getProperty("autoSuggest.terms.facet.field")));
+		query.add("facet.field", values.getProperty("autoSuggest.terms.facet.field"));
 		query.setFacetPrefix(queryParam.toLowerCase());
 		String filterType = attributes.getFilterType();
 		if (filterType != null) {
