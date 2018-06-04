@@ -26,7 +26,9 @@ public class SnowAutoSuggestFacade {
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 						| searchValue.equalsIgnoreCase("ALL")) {
-					LOG.info("searchValue - " + searchValue);
+					if (null != searchValue) {
+						LOG.info("searchValue - " + searchValue);
+					}
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
@@ -66,7 +68,9 @@ public class SnowAutoSuggestFacade {
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 						| searchValue.equalsIgnoreCase("ALL")) {
-					LOG.info("searchValue - " + searchValue);
+					if (null != searchValue) {
+						LOG.info("searchValue - " + searchValue);
+					}
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
 					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();

@@ -60,7 +60,9 @@ public class SnowSearchController {
 				if (didYouMean.getNumFound(queryResponse).equalsIgnoreCase("0")) {
 					queryResponse = didYouMean.spellcheck(requestDTO.getQueryParam());
 				}
-				LOG.info("final Response:" + queryResponse);
+				if (null != queryResponse) {
+					LOG.info("final Response:" + queryResponse);
+				}
 			}
 		} catch (Exception e) {
 			LOG.error("Some error occured ! Please check.", e);
@@ -103,7 +105,9 @@ public class SnowSearchController {
 		String encodedCredentials = Base64.getEncoder()
 				.encodeToString(userNameAndPassword.getBytes(StandardCharsets.UTF_8));
 		String finalCredentials = "Basic " + encodedCredentials;
-		LOG.info("abzs:" + finalCredentials);
+		if (null != finalCredentials) {
+			LOG.info("credentials:" + finalCredentials);
+		}
 		if (finalCredentials.equals(authCredentials)) {
 			return true;
 		}
@@ -146,7 +150,7 @@ public class SnowSearchController {
 			} else {
 				attributes = searchFacade.fetchAll(requestDTO);
 				queryResponse = searchFacade.getQuerySearch(requestDTO, user, attributes);
-				if (null != queryResponse.toString()) {
+				if (null != queryResponse) {
 					LOG.info("final Response:" + queryResponse);
 				}
 			}

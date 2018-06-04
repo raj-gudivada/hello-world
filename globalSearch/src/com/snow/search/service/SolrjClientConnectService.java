@@ -64,7 +64,7 @@ public class SolrjClientConnectService {
 		}
 		query.add("defType", "edismax");
 
-		if (null != query.toString()) {
+		if (null != query) {
 			LOG.info("queryFormed:" + query);
 		}
 
@@ -75,7 +75,7 @@ public class SolrjClientConnectService {
 		NamedList<Object> resp = solr.request(req);
 		String jsonResponse = (String) resp.get("response");
 
-		if (null != query.toString()) {
+		if (null != jsonResponse) {
 			LOG.info("jsonResponse:" + jsonResponse);
 		}
 

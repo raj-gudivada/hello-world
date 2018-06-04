@@ -137,12 +137,16 @@ public class AutoSuggestSolrjClientConnectService {
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
-		LOG.info("Solr Query :" + query.toString());
+		if (null != query.toString()) {
+			LOG.info("Solr Query :" + query.toString());
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
-		LOG.info("Query Time :" + qTime + "mSec");
+		if (null != qTime) {
+			LOG.info("Query Time :" + qTime + "mSec");
+		}
 		solr.close();
 		return jsonResponse;
 	}
