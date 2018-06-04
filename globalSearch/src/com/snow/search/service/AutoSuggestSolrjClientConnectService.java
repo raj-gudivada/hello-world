@@ -81,18 +81,16 @@ public class AutoSuggestSolrjClientConnectService {
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
 
-		if (null != query.toString()) {
+		if (null != query.toString() && LOG.isInfoEnabled())
 			LOG.info("Solr Query :" + query.toString());
-		}
 
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
 
-		if (null != qTime) {
+		if (null != qTime && LOG.isInfoEnabled())
 			LOG.info("Query Time :" + qTime + "mSec");
-		}
 
 		return jsonResponse;
 	}
@@ -137,16 +135,16 @@ public class AutoSuggestSolrjClientConnectService {
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		jsonResponse = (String) resp.get("response");
-		if (null != query.toString()) {
+		if (null != query.toString() && LOG.isInfoEnabled())
 			LOG.info("Solr Query :" + query.toString());
-		}
+
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode node = mapper.readValue(jsonResponse, JsonNode.class);
 		JsonNode responseHeaderNode = node.get("responseHeader");
 		String qTime = responseHeaderNode.get("QTime").toString();
-		if (null != qTime) {
+		if (null != qTime && LOG.isInfoEnabled())
 			LOG.info("Query Time :" + qTime + "mSec");
-		}
+
 		solr.close();
 		return jsonResponse;
 	}

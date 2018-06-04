@@ -19,7 +19,6 @@ public class SolrjClientConnectService {
 
 	final static Logger LOG = Logger.getLogger(SolrjClientConnectService.class);
 
-
 	public String querySearch(String queryParam, Integer start, Integer rows, String user, AttributesDTO attributes)
 			throws IOException, SolrServerException {
 		Properties values = SnowUtils.getPropertyValues();
@@ -64,7 +63,8 @@ public class SolrjClientConnectService {
 		}
 		query.add("defType", "edismax");
 
-		if (null != query) {
+		if (null != query && LOG.isInfoEnabled())
+		{
 			LOG.info("queryFormed:" + query);
 		}
 
@@ -75,9 +75,8 @@ public class SolrjClientConnectService {
 		NamedList<Object> resp = solr.request(req);
 		String jsonResponse = (String) resp.get("response");
 
-		if (null != jsonResponse) {
+		if (null != jsonResponse && LOG.isInfoEnabled())
 			LOG.info("jsonResponse:" + jsonResponse);
-		}
 
 		solr.close();
 		return jsonResponse;

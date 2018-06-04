@@ -60,9 +60,9 @@ public class SnowSearchController {
 				if (didYouMean.getNumFound(queryResponse).equalsIgnoreCase("0")) {
 					queryResponse = didYouMean.spellcheck(requestDTO.getQueryParam());
 				}
-				if (null != queryResponse) {
+				if (null != queryResponse && LOG.isInfoEnabled())
 					LOG.info("final Response:" + queryResponse);
-				}
+
 			}
 		} catch (Exception e) {
 			LOG.error("Some error occured ! Please check.", e);
@@ -82,7 +82,7 @@ public class SnowSearchController {
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;
@@ -105,9 +105,9 @@ public class SnowSearchController {
 		String encodedCredentials = Base64.getEncoder()
 				.encodeToString(userNameAndPassword.getBytes(StandardCharsets.UTF_8));
 		String finalCredentials = "Basic " + encodedCredentials;
-		if (null != finalCredentials) {
+		if (null != finalCredentials && LOG.isInfoEnabled())
 			LOG.info("credentials:" + finalCredentials);
-		}
+
 		if (finalCredentials.equals(authCredentials)) {
 			return true;
 		}
@@ -150,9 +150,9 @@ public class SnowSearchController {
 			} else {
 				attributes = searchFacade.fetchAll(requestDTO);
 				queryResponse = searchFacade.getQuerySearch(requestDTO, user, attributes);
-				if (null != queryResponse) {
+				if (null != queryResponse && LOG.isInfoEnabled())
 					LOG.info("final Response:" + queryResponse);
-				}
+
 			}
 		} catch (Exception e) {
 			LOG.error("Some error occured ! Please check.", e);
@@ -172,7 +172,7 @@ public class SnowSearchController {
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;
@@ -223,7 +223,7 @@ public class SnowSearchController {
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 		}
 
@@ -281,7 +281,7 @@ public class SnowSearchController {
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				e1.printStackTrace();
+				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;
