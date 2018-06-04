@@ -16,20 +16,18 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class SnowBasicSearchErrorHandling extends SnowErrorHandling {
-	final static Logger logger = Logger.getLogger(SnowBasicSearchErrorHandling.class);
+	final static Logger LOG = Logger.getLogger(SnowBasicSearchErrorHandling.class);
 
 	public ErrorhandlerDTO basicSearchFacetErrorHandling(RequestDTO requestDTO) throws IOException {
 		ErrorhandlerDTO errorhandling = null;
-		SnowUtils snowSearchUtils = new SnowUtils();
 		List<String> facetSelection = requestDTO.getFacetSelection();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		if (facetSelection == null || facetSelection.isEmpty() || facetSelection.size() == 0
 				|| facetSelection.contains(" ") || facetSelection.contains("")) {
 			errorhandling = new ErrorhandlerDTO();
 			errorhandling.setErrorMessage(values.getProperty("errorMessage.facetSelection"));
 			errorhandling.setErrorCode(values.getProperty("errorcode.facetSelection"));
 		}
-		// }
 		return errorhandling;
 	}
 

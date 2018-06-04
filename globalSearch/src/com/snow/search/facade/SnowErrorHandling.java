@@ -13,17 +13,15 @@ import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowUtils;
 
 public class SnowErrorHandling {
-	final static Logger logger = Logger.getLogger(SnowErrorHandling.class);
+	final static Logger LOG = Logger.getLogger(SnowErrorHandling.class);
 
 	public List<ErrorhandlerDTO> errorHandling(RequestDTO requestDTO) throws IOException {
-		SnowUtils snowSearchUtils = new SnowUtils();
-		String userId = requestDTO.getQueryParam();
 		String queryParam = requestDTO.getQueryParam();
 		List<String> userRole = requestDTO.getUserRoles();
 		List<String> searchType = requestDTO.getSearchType();
 		Integer maxRows = requestDTO.getMaxRows();
 		List<ErrorhandlerDTO> errorhandlerDTOs = new ArrayList<ErrorhandlerDTO>();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		if (queryParam.equalsIgnoreCase("") || queryParam == null || queryParam.isEmpty() || queryParam.length() == 0
 				|| queryParam.equalsIgnoreCase(" ")) {
 			ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
@@ -47,9 +45,7 @@ public class SnowErrorHandling {
 			errorhandlerDTOs.add(errorhandling);
 		}
 		if (requestDTO.getMode() != null) {
-
 			ErrorhandlerDTO errorhandling = validateMode(requestDTO);
-
 			if (errorhandling.getErrorCode() != null && errorhandling.getErrorMessage() != null) {
 				errorhandlerDTOs.add(errorhandling);
 			}
@@ -58,7 +54,6 @@ public class SnowErrorHandling {
 		if (requestDTO.getMode() == null || requestDTO.getMode().isEmpty() || requestDTO.getMode().equalsIgnoreCase("")
 				|| requestDTO.getMode().equalsIgnoreCase(" ")) {
 			ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
-
 			errorhandling.setErrorMessage(values.getProperty("errorMessage.mode"));
 			errorhandling.setErrorCode(values.getProperty("errorcode.mode"));
 			errorhandlerDTOs.add(errorhandling);
@@ -77,8 +72,7 @@ public class SnowErrorHandling {
 	}
 
 	public ErrorhandlerDTO searchtypeCheck(RequestDTO requestDTO) throws IOException {
-		SnowUtils snowSearchUtils = new SnowUtils();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		List<String> inputSearchType = requestDTO.getSearchType();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
 		List<String> supportedSearchTypes = Arrays.asList(values.getProperty("supported.searchTypes").split(","));
@@ -96,8 +90,7 @@ public class SnowErrorHandling {
 	}
 
 	public ErrorhandlerDTO validateMode(RequestDTO requestDTO) throws IOException {
-		SnowUtils snowSearchUtils = new SnowUtils();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		String inputMode = requestDTO.getMode().toUpperCase();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
 		List<String> supportedModes = Arrays.asList(values.getProperty("supported.mode").split(","));

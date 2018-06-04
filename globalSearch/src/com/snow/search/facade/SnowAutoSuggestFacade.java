@@ -13,13 +13,13 @@ import com.snow.search.service.AutoSuggestSolrjClientConnectService;
 import com.snow.util.SnowUtils;;
 
 public class SnowAutoSuggestFacade {
+
 	final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
 
 	public AttributesDTO fetchAutoFillFields(RequestDTO requestDTO) throws IOException {
-		SnowUtils snowSearchUtils = new SnowUtils();
 		AttributesDTO attributes = new AttributesDTO();
 		List<String> searchTypes = requestDTO.getSearchType();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		if (searchTypes.size() > 1) {
 			SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
 			attributes = snowUtiltyFunctions.fetchSearchTypeUserFilter(searchTypes, requestDTO);
@@ -30,8 +30,8 @@ public class SnowAutoSuggestFacade {
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
-
 				}
+
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("SC")) {
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
@@ -141,17 +141,13 @@ public class SnowAutoSuggestFacade {
 			throws IOException, SolrServerException {
 		AutoSuggestSolrjClientConnectService solrjClientConnectService = new AutoSuggestSolrjClientConnectService();
 		String queryResponse = null;
-
 		queryResponse = solrjClientConnectService.autoFillQuerySearch(requestDTO, attributesDTO);
-
 		return queryResponse;
 	}
 
 	// AutoSuggestTerms Module
-
 	public String autoSuggestTermsQuerySearch(RequestDTO requestDTO, AttributesDTO attributes)
 			throws IOException, SolrServerException {
-		// TODO Auto-generated method stub
 		AutoSuggestSolrjClientConnectService solrjClientConnectService = new AutoSuggestSolrjClientConnectService();
 		String queryResponse = null;
 
@@ -162,10 +158,9 @@ public class SnowAutoSuggestFacade {
 	}
 
 	public AttributesDTO fetchAutoSuggestTerms(RequestDTO requestDTO) throws IOException {
-		SnowUtils snowSearchUtils = new SnowUtils();
 		AttributesDTO attributes = new AttributesDTO();
 		List<String> searchTypes = requestDTO.getSearchType();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 
 		// If SearchType is more than one value Ex: "searchType":["SC","UD"]
 		if (searchTypes.size() > 1) {
@@ -187,20 +182,15 @@ public class SnowAutoSuggestFacade {
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 				}
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("SC")) {
-
 					attributes.setFacet(Boolean.TRUE);
-
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-
 					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
 
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("KB")) {
-
 					attributes.setFacet(Boolean.TRUE);
-
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
 					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
@@ -209,7 +199,6 @@ public class SnowAutoSuggestFacade {
 
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("UD")) {
 					attributes.setFacet(Boolean.TRUE);
-
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
 					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));

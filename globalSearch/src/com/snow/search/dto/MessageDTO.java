@@ -3,9 +3,9 @@ package com.snow.search.dto;
 public class MessageDTO {
 
 	private String responseCode;
-	
+
 	private String responseMessage;
-	
+
 	private String headerValue;
 
 	public String getResponseCode() {
@@ -31,5 +31,5 @@ public class MessageDTO {
 	public void setHeaderValue(String headerValue) {
 		this.headerValue = headerValue;
 	}
-	
+
 }

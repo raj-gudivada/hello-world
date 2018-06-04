@@ -29,7 +29,7 @@ import com.snow.util.SnowUtils;
 
 @RestController
 public class SnowSearchController {
-	
+
 	public final static Logger LOG = Logger.getLogger(SnowSearchController.class);
 
 	@RequestMapping(value = "/basicSearch", method = RequestMethod.POST, consumes = "application/json")
@@ -164,7 +164,6 @@ public class SnowSearchController {
 				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
-				// TODO Auto-generated catch block
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
 				e1.printStackTrace();

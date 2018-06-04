@@ -18,12 +18,11 @@ import com.snow.search.dto.AttributesDTO;
 import com.snow.util.SnowUtils;
 
 public class SolrjClientConnectService {
-	final static Logger logger = Logger.getLogger(SolrjClientConnectService.class);
+	final static Logger LOG = Logger.getLogger(SolrjClientConnectService.class);
 
 	public String querySearch(String queryParam, Integer start, Integer rows, String user, AttributesDTO attributes)
 			throws IOException, SolrServerException {
-		SnowUtils snowSearchUtils = new SnowUtils();
-		Properties values = snowSearchUtils.getPropertyValues();
+		Properties values = SnowUtils.getPropertyValues();
 		CloudSolrClient solr = getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
 		query.setQuery(queryParam);
@@ -64,14 +63,14 @@ public class SolrjClientConnectService {
 			query.add("bq", attributes.getBoostQuery());
 		}
 		query.add("defType", "edismax");
-		logger.info("queryFormed:" + query);
+		LOG.info("queryFormed:" + query);
 		QueryRequest req = new QueryRequest(query);
 		NoOpResponseParser rawJsonResponseParser = new NoOpResponseParser();
 		rawJsonResponseParser.setWriterType("json");
 		req.setResponseParser(rawJsonResponseParser);
 		NamedList<Object> resp = solr.request(req);
 		String jsonResponse = (String) resp.get("response");
-		logger.info("jsonResponse:" + jsonResponse);
+		LOG.info("jsonResponse:" + jsonResponse);
 		solr.close();
 		return jsonResponse;
 	}
@@ -90,11 +89,8 @@ public class SolrjClientConnectService {
 		if (attributes.getFacet() == true) {
 			String facetFieldMapValue = "facet.field";
 			String[] fieldNames = attributes.getFacetValue().split(",");
-
 			Map<String, String[]> facetFieldNames = new HashMap<String, String[]>();
-
 			facetFieldNames.put(facetFieldMapValue, fieldNames);
-
 			ModifiableSolrParams solrParams = new ModifiableSolrParams(facetFieldNames);
 			Map<String, String[]> facetField = solrParams.getMap();
 			for (Map.Entry<String, String[]> entry : facetField.entrySet()) {
@@ -105,7 +101,6 @@ public class SolrjClientConnectService {
 					value = string;
 					query.add(param, value);
 				}
-
 			}
 		}
 		query.setFacet(attributes.getFacet());
