@@ -1,4 +1,4 @@
-package com.snow.search.facade;
+package com.snow.util;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -13,10 +13,9 @@ import org.apache.solr.common.util.NamedList;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.snow.search.service.SolrjClientConnectService;
-import com.snow.util.SnowUtils;
+import com.snow.search.service.SnowSearchService;
 
-public class SnowDidYouMean {
+public class SnowDidYouMeanUtil {
 
 	public String getNumFound(String queryResponse) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
@@ -30,8 +29,8 @@ public class SnowDidYouMean {
 
 	public String spellcheck(String queryParam) throws IOException, SolrServerException {
 
-		Properties values = SnowUtils.getPropertyValues();
-		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
+		SnowSearchService solrjClientConnectService = new SnowSearchService();
 		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
 		ModifiableSolrParams params = new ModifiableSolrParams();
 		params.set("qt", values.getProperty("spellCheck.requestHandler").trim());

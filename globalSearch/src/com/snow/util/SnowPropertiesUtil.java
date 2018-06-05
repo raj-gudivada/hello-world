@@ -9,9 +9,9 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-public class SnowUtils {
+public class SnowPropertiesUtil {
 
-	public static final Logger LOG = Logger.getLogger(SnowUtils.class);
+	public static final Logger LOG = Logger.getLogger(SnowPropertiesUtil.class);
 	public static Properties prop = null;
 	public static long lastModified = 0;
 

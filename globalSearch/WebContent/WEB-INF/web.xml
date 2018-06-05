@@ -9,6 +9,13 @@
     <servlet-name>snowSearch</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/snowSearch-servlet.xml</param-value>
+  </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

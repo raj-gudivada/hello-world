@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -13,16 +15,17 @@ import org.apache.solr.client.solrj.impl.NoOpResponseParser;
 import org.apache.solr.client.solrj.request.QueryRequest;
 import org.apache.solr.common.params.ModifiableSolrParams;
 import org.apache.solr.common.util.NamedList;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.snow.search.dto.AttributesDTO;
 import com.snow.search.dto.RequestDTO;
-import com.snow.util.SnowUtils;
+import com.snow.util.SnowPropertiesUtil;
 
-public class AutoSuggestSolrjClientConnectService {
+public class SnowAutoSuggestService {
 
-	final static Logger LOG = Logger.getLogger(AutoSuggestSolrjClientConnectService.class);
+	public final static Logger LOG = Logger.getLogger(SnowAutoSuggestService.class);
+	
+	SnowSearchService snowSearchService;
 
 	// AutoFill Query Module
 	public void setMultipleFacets(AttributesDTO attributes, SolrQuery query) {
@@ -51,9 +54,8 @@ public class AutoSuggestSolrjClientConnectService {
 		String jsonResponse = null;
 		String activeProperty = attributesDTO.getActiveProperty();
 		Properties values = null;
-		values = SnowUtils.getPropertyValues();
-		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
-		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
+		values = SnowPropertiesUtil.getPropertyValues();
+		CloudSolrClient solr = getSnowSearchService().getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
 		query.setQuery(requestDTO.getQueryParam());
 		query.setRows(requestDTO.getMaxRows());
@@ -101,9 +103,8 @@ public class AutoSuggestSolrjClientConnectService {
 		String activeProperty = attributes.getActiveProperty();
 		Properties values = null;
 		String jsonResponse = null;
-		values = SnowUtils.getPropertyValues();
-		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
-		CloudSolrClient solr = solrjClientConnectService.getSolrConnection(values);
+		values = SnowPropertiesUtil.getPropertyValues();
+		CloudSolrClient solr = getSnowSearchService().getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
 		query.setFacet(attributes.getFacet());
 		query.setQuery(values.getProperty("autoSuggest.terms.q"));
@@ -148,4 +149,14 @@ public class AutoSuggestSolrjClientConnectService {
 		solr.close();
 		return jsonResponse;
 	}
+
+	public SnowSearchService getSnowSearchService() {
+		return snowSearchService;
+	}
+
+	@Resource
+	public void setSnowSearchService(SnowSearchService snowSearchService) {
+		this.snowSearchService = snowSearchService;
+	}
+
 }

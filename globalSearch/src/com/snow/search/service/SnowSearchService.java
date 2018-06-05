@@ -13,15 +13,15 @@ import org.apache.solr.client.solrj.request.QueryRequest;
 import org.apache.solr.common.params.ModifiableSolrParams;
 import org.apache.solr.common.util.NamedList;
 import com.snow.search.dto.AttributesDTO;
-import com.snow.util.SnowUtils;
+import com.snow.util.SnowPropertiesUtil;
 
-public class SolrjClientConnectService {
+public class SnowSearchService {
 
-	final static Logger LOG = Logger.getLogger(SolrjClientConnectService.class);
+	final static Logger LOG = Logger.getLogger(SnowSearchService.class);
 
 	public String querySearch(String queryParam, Integer start, Integer rows, String user, AttributesDTO attributes)
 			throws IOException, SolrServerException {
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		CloudSolrClient solr = getSolrConnection(values);
 		SolrQuery query = new SolrQuery();
 		query.setQuery(queryParam);

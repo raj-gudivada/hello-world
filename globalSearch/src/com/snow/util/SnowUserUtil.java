@@ -1,4 +1,4 @@
-package com.snow.search.facade;
+package com.snow.util;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,14 +8,13 @@ import org.apache.log4j.Logger;
 
 import com.snow.search.dto.AttributesDTO;
 import com.snow.search.dto.RequestDTO;
-import com.snow.util.SnowUtils;
 
-public class SnowUtiltyFunctions {
+public class SnowUserUtil {
 
-	SnowUtils snowSearchUtils = new SnowUtils();
+	SnowPropertiesUtil snowSearchUtils = new SnowPropertiesUtil();
 
 
-	final static Logger LOG = Logger.getLogger(SnowUtiltyFunctions.class);
+	final static Logger LOG = Logger.getLogger(SnowUserUtil.class);
 
 
 	public String fetchUserRoles(RequestDTO requestDTO) throws IOException {
@@ -23,7 +22,7 @@ public class SnowUtiltyFunctions {
 		String roleValue = null;
 		String response = null;
 
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		if (searchType.contains("LOC") || searchType.contains("UD") || searchType.contains("APP")) {
 			roleValue = values.getProperty("ud.loc.all.roles");
 		} else {
@@ -56,7 +55,7 @@ public class SnowUtiltyFunctions {
 
 		AttributesDTO attributes = new AttributesDTO();
 
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		StringBuffer sb = new StringBuffer();
 		for (String multiSearchType : searchTypes) {
 			sb.append("\"" + multiSearchType + "\"" + ",");

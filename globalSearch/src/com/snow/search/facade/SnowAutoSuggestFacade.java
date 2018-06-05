@@ -4,24 +4,29 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrServerException;
 
 import com.snow.search.dto.AttributesDTO;
 import com.snow.search.dto.RequestDTO;
-import com.snow.search.service.AutoSuggestSolrjClientConnectService;
-import com.snow.util.SnowUtils;;
+import com.snow.search.service.SnowAutoSuggestService;
+import com.snow.util.SnowPropertiesUtil;
+import com.snow.util.SnowUserUtil;;
 
 public class SnowAutoSuggestFacade {
 
-	final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
+	public final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
+	
+	SnowAutoSuggestService snowAutoSuggestService;
 
 	public AttributesDTO fetchAutoFillFields(RequestDTO requestDTO) throws IOException {
 		AttributesDTO attributes = new AttributesDTO();
 		List<String> searchTypes = requestDTO.getSearchType();
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		if (searchTypes.size() > 1) {
-			SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+			SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 			attributes = snowUtiltyFunctions.fetchSearchTypeUserFilter(searchTypes, requestDTO);
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
@@ -73,7 +78,7 @@ public class SnowAutoSuggestFacade {
 
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
@@ -85,7 +90,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.sc.filter.type"));
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("sc.boosting.order"));
 				}
@@ -96,7 +101,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.kb.filter.type"));
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("kb.boosting.order"));
 				}
@@ -107,7 +112,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.ud.filter.type"));
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("ud.boosting.order"));
 
@@ -119,7 +124,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.loc.filter.type"));
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("loc.boosting.order"));
 
@@ -129,7 +134,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(
 							values.getProperty("filter.type.all") + ":" + values.getProperty("app.filter.type"));
-					SnowUtiltyFunctions functions = new SnowUtiltyFunctions();
+					SnowUserUtil functions = new SnowUserUtil();
 					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("app.boosting.order"));
 
@@ -143,19 +148,17 @@ public class SnowAutoSuggestFacade {
 
 	public String getAutoQuerySearch(RequestDTO requestDTO, AttributesDTO attributesDTO)
 			throws IOException, SolrServerException {
-		AutoSuggestSolrjClientConnectService solrjClientConnectService = new AutoSuggestSolrjClientConnectService();
 		String queryResponse = null;
-		queryResponse = solrjClientConnectService.autoFillQuerySearch(requestDTO, attributesDTO);
+		queryResponse = snowAutoSuggestService.autoFillQuerySearch(requestDTO, attributesDTO);
 		return queryResponse;
 	}
 
 	// AutoSuggestTerms Module
 	public String autoSuggestTermsQuerySearch(RequestDTO requestDTO, AttributesDTO attributes)
 			throws IOException, SolrServerException {
-		AutoSuggestSolrjClientConnectService solrjClientConnectService = new AutoSuggestSolrjClientConnectService();
 		String queryResponse = null;
 
-		queryResponse = solrjClientConnectService.autoSuggestTermsSearch(requestDTO.getQueryParam(),
+		queryResponse = snowAutoSuggestService.autoSuggestTermsSearch(requestDTO.getQueryParam(),
 				requestDTO.getMaxRows(), attributes);
 
 		return queryResponse;
@@ -164,11 +167,11 @@ public class SnowAutoSuggestFacade {
 	public AttributesDTO fetchAutoSuggestTerms(RequestDTO requestDTO) throws IOException {
 		AttributesDTO attributes = new AttributesDTO();
 		List<String> searchTypes = requestDTO.getSearchType();
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 
 		// If SearchType is more than one value Ex: "searchType":["SC","UD"]
 		if (searchTypes.size() > 1) {
-			SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+			SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 			attributes = snowUtiltyFunctions.fetchSearchTypeUserFilter(searchTypes, requestDTO);
 			attributes.setFacet(Boolean.TRUE);
 			attributes.setActiveProperty(values.getProperty("active.property") + ":" + Boolean.TRUE);
@@ -182,13 +185,13 @@ public class SnowAutoSuggestFacade {
 						| searchValue.equalsIgnoreCase("ALL")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 				}
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("SC")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
@@ -196,7 +199,7 @@ public class SnowAutoSuggestFacade {
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("KB")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
@@ -204,7 +207,7 @@ public class SnowAutoSuggestFacade {
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("UD")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
@@ -212,7 +215,7 @@ public class SnowAutoSuggestFacade {
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("LOC")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
@@ -220,7 +223,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(
 							values.getProperty("filter.type.all") + ":" + values.getProperty("app.filter.type"));
-					SnowUtiltyFunctions snowUtiltyFunctions = new SnowUtiltyFunctions();
+					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
 					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
 
 				}
@@ -230,6 +233,15 @@ public class SnowAutoSuggestFacade {
 			}
 		}
 		return attributes;
+	}
+
+	public SnowAutoSuggestService getSnowAutoSuggestService() {
+		return snowAutoSuggestService;
+	}
+
+	@Resource
+	public void setSnowAutoSuggestService(SnowAutoSuggestService snowAutoSuggestService) {
+		this.snowAutoSuggestService = snowAutoSuggestService;
 	}
 
 }

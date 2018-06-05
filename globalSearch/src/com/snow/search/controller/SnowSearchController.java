@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
+import javax.annotation.Resource;
+
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,17 +23,23 @@ import com.snow.search.dto.ErrorhandlerDTO;
 import com.snow.search.dto.MessageDTO;
 import com.snow.search.dto.RequestDTO;
 import com.snow.search.facade.SnowAutoSuggestFacade;
-import com.snow.search.facade.SnowBasicSearchErrorHandling;
-import com.snow.search.facade.SnowDidYouMean;
-import com.snow.search.facade.SnowErrorHandling;
 import com.snow.search.facade.SnowSearchFacade;
-import com.snow.util.SnowUtils;
+import com.snow.search.handler.SnowBasicSearchErrorHandler;
+import com.snow.search.handler.SnowErrorHandler;
+import com.snow.util.SnowDidYouMeanUtil;
+import com.snow.util.SnowPropertiesUtil;
 
 @RestController
 public class SnowSearchController {
 
 	public final static Logger LOG = Logger.getLogger(SnowSearchController.class);
 
+	@Resource
+	SnowSearchFacade snowSearchFacade;
+	
+	@Resource
+	SnowAutoSuggestFacade snowAutoSuggestFacade;
+	
 	@RequestMapping(value = "/basicSearch", method = RequestMethod.POST, consumes = "application/json")
 	public String basicSolrSearchPost(@RequestBody RequestDTO requestDTO) {
 		String queryResponse = null;
@@ -39,7 +47,7 @@ public class SnowSearchController {
 		try {
 			AttributesDTO attributes = null;
 			// Error Handling
-			SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+			SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 			List<ErrorhandlerDTO> errorhandlerDTOs = basicSearchErrorHandling.errorHandling(requestDTO);
 			Iterator<ErrorhandlerDTO> ite = errorhandlerDTOs.iterator();
 			while (ite.hasNext()) {
@@ -51,12 +59,11 @@ public class SnowSearchController {
 				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
-				SnowSearchFacade searchFacade = new SnowSearchFacade();
-				String user = searchFacade.fetchUserRoles(requestDTO);
-				attributes = searchFacade.fetchAll(requestDTO);
-				queryResponse = searchFacade.getQuerySearch(requestDTO, user, attributes);
+				String user = snowSearchFacade.fetchUserRoles(requestDTO);
+				attributes = snowSearchFacade.fetchAll(requestDTO);
+				queryResponse = snowSearchFacade.getQuerySearch(requestDTO, user, attributes);
 				// DidyouMean
-				SnowDidYouMean didYouMean = new SnowDidYouMean();
+				SnowDidYouMeanUtil didYouMean = new SnowDidYouMeanUtil();
 				if (didYouMean.getNumFound(queryResponse).equalsIgnoreCase("0")) {
 					queryResponse = didYouMean.spellcheck(requestDTO.getQueryParam());
 				}
@@ -68,7 +75,7 @@ public class SnowSearchController {
 			LOG.error("Some error occured ! Please check.", e);
 			LOG.error(e.getStackTrace());
 			try {
-				Properties values = SnowUtils.getPropertyValues();
+				Properties values = SnowPropertiesUtil.getPropertyValues();
 				MessageDTO messageDTO = new MessageDTO();
 				messageDTO.setResponseCode(values.getProperty("response.error.responseCode"));
 				messageDTO.setResponseMessage(values.getProperty("response.error.responseMessage"));
@@ -77,12 +84,11 @@ public class SnowSearchController {
 				errorhandlerDTO.setErrorCode(values.getProperty("errorcode.exception"));
 				errorhandlerDTO.setErrorMessage(values.getProperty("errorMessage.exception"));
 				errorhandlerDTOs.add(errorhandlerDTO);
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;
@@ -90,14 +96,14 @@ public class SnowSearchController {
 
 	private MessageDTO populateResponseDTO() throws IOException {
 		MessageDTO messageDTO = new MessageDTO();
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		messageDTO.setResponseCode(values.getProperty("response.success.responseCode"));
 		messageDTO.setResponseMessage(values.getProperty("response.success.responseMessage"));
 		return messageDTO;
 	}
 
 	public boolean isUserAuthenticated(String authCredentials) throws IOException {
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		String userName = new String(Base64.getDecoder().decode(values.getProperty("serviceNow.user.name")), "UTF-8");
 		String password = new String(Base64.getDecoder().decode(values.getProperty("serviceNow.user.password")),
 				"UTF-8");
@@ -124,7 +130,6 @@ public class SnowSearchController {
 		String queryResponse = null;
 
 		try {
-			SnowSearchFacade searchFacade = new SnowSearchFacade();
 			RequestDTO requestDTO = new RequestDTO();
 			requestDTO.setQueryParam(queryParam);
 			requestDTO.setRows(rows);
@@ -132,11 +137,11 @@ public class SnowSearchController {
 			requestDTO.setSearchType(searchType);
 			requestDTO.setUserRoles(userRoles);
 			requestDTO.setFacetSelection(facetSelection);
-			String user = searchFacade.fetchUserRoles(requestDTO);
+			String user = snowSearchFacade.fetchUserRoles(requestDTO);
 			AttributesDTO attributes = null;
 
 			// Error Handling
-			SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+			SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 			List<ErrorhandlerDTO> errorhandlerDTOs = basicSearchErrorHandling.errorHandling(requestDTO);
 			Iterator<ErrorhandlerDTO> ite = errorhandlerDTOs.iterator();
 			while (ite.hasNext()) {
@@ -148,8 +153,8 @@ public class SnowSearchController {
 				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
-				attributes = searchFacade.fetchAll(requestDTO);
-				queryResponse = searchFacade.getQuerySearch(requestDTO, user, attributes);
+				attributes = snowSearchFacade.fetchAll(requestDTO);
+				queryResponse = snowSearchFacade.getQuerySearch(requestDTO, user, attributes);
 				if (null != queryResponse && LOG.isInfoEnabled())
 					LOG.info("final Response:" + queryResponse);
 
@@ -158,7 +163,7 @@ public class SnowSearchController {
 			LOG.error("Some error occured ! Please check.", e);
 			LOG.error(e.getStackTrace());
 			try {
-				Properties values = SnowUtils.getPropertyValues();
+				Properties values = SnowPropertiesUtil.getPropertyValues();
 				MessageDTO messageDTO = new MessageDTO();
 				messageDTO.setResponseCode(values.getProperty("response.error.responseCode"));
 				messageDTO.setResponseMessage(values.getProperty("response.error.responseMessage"));
@@ -167,12 +172,11 @@ public class SnowSearchController {
 				errorhandlerDTO.setErrorCode(values.getProperty("errorcode.exception"));
 				errorhandlerDTO.setErrorMessage(values.getProperty("errorMessage.exception"));
 				errorhandlerDTOs.add(errorhandlerDTO);
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;
@@ -181,14 +185,13 @@ public class SnowSearchController {
 	// AutoSuggestTerms Service
 	@RequestMapping(value = "/autoSuggestTerms", method = RequestMethod.POST, consumes = "application/json")
 	public String autoSuggestSolrSearchPost(@RequestBody RequestDTO requestDTO) {
-		SnowAutoSuggestFacade snowAutoSuggestFacade = new SnowAutoSuggestFacade();
 		String queryResponse = null;
 		try {
 			// Error Handling
-			SnowErrorHandling errorHandling = new SnowErrorHandling();
+			SnowErrorHandler errorHandling = new SnowErrorHandler();
 			List<ErrorhandlerDTO> errorhandlerDTOs = errorHandling.errorHandling(requestDTO);
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
@@ -208,9 +211,8 @@ public class SnowSearchController {
 			LOG.error("Some error occured ! Please check.", e);
 			LOG.error(e.getStackTrace());
 			try {
-				Properties values = SnowUtils.getPropertyValues();
+				Properties values = SnowPropertiesUtil.getPropertyValues();
 				MessageDTO messageDTO = new MessageDTO();
-				// values=new Properties();
 				messageDTO.setResponseCode(values.getProperty("response.error.responseCode"));
 				messageDTO.setResponseMessage(values.getProperty("response.error.responseMessage"));
 				List<ErrorhandlerDTO> errorhandlerDTOs = new ArrayList<ErrorhandlerDTO>();
@@ -218,12 +220,11 @@ public class SnowSearchController {
 				errorhandlerDTO.setErrorCode(values.getProperty("errorcode.exception"));
 				errorhandlerDTO.setErrorMessage(values.getProperty("errorMessage.exception"));
 				errorhandlerDTOs.add(errorhandlerDTO);
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				//e1.printStackTrace();
 			}
 		}
 
@@ -234,7 +235,6 @@ public class SnowSearchController {
 	public String autoSuggestSolrSearchGet(@RequestParam String queryParam, @RequestParam Integer maxRows,
 			@RequestParam List<String> userRoles, @RequestParam List<String> searchType, @RequestParam String mode)
 			throws IOException {
-		SnowAutoSuggestFacade snowAutoSuggestFacade = new SnowAutoSuggestFacade();
 		RequestDTO requestDTO = new RequestDTO();
 		requestDTO.setQueryParam(queryParam);
 		requestDTO.setMaxRows(maxRows);
@@ -244,10 +244,10 @@ public class SnowSearchController {
 		String queryResponse = null;
 		try {
 			// Error Handling
-			SnowErrorHandling errorHandling = new SnowErrorHandling();
+			SnowErrorHandler errorHandling = new SnowErrorHandler();
 			List<ErrorhandlerDTO> errorhandlerDTOs = errorHandling.errorHandling(requestDTO);
 			if (errorhandlerDTOs.size() != 0 || !errorhandlerDTOs.isEmpty()) {
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				MessageDTO messageDTO = populateResponseDTO();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} else {
@@ -267,7 +267,7 @@ public class SnowSearchController {
 			LOG.error("Some error occured ! Please check.", e);
 			LOG.error(e.getStackTrace());
 			try {
-				Properties values = SnowUtils.getPropertyValues();
+				Properties values = SnowPropertiesUtil.getPropertyValues();
 				MessageDTO messageDTO = new MessageDTO();
 				messageDTO.setResponseCode(values.getProperty("response.error.responseCode"));
 				messageDTO.setResponseMessage(values.getProperty("response.error.responseMessage"));
@@ -276,12 +276,11 @@ public class SnowSearchController {
 				errorhandlerDTO.setErrorCode(values.getProperty("errorcode.exception"));
 				errorhandlerDTO.setErrorMessage(values.getProperty("errorMessage.exception"));
 				errorhandlerDTOs.add(errorhandlerDTO);
-				SnowBasicSearchErrorHandling basicSearchErrorHandling = new SnowBasicSearchErrorHandling();
+				SnowBasicSearchErrorHandler basicSearchErrorHandling = new SnowBasicSearchErrorHandler();
 				queryResponse = basicSearchErrorHandling.errorListResponse(errorhandlerDTOs, messageDTO);
 			} catch (JSONException | IOException e1) {
 				LOG.error("Some error occured ! Please check.", e);
 				queryResponse = "Some Internal Error Occured !";
-				//e1.printStackTrace();
 			}
 		}
 		return queryResponse;

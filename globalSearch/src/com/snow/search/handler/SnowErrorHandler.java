@@ -1,4 +1,4 @@
-package com.snow.search.facade;
+package com.snow.search.handler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,11 +10,11 @@ import org.apache.log4j.Logger;
 
 import com.snow.search.dto.ErrorhandlerDTO;
 import com.snow.search.dto.RequestDTO;
-import com.snow.util.SnowUtils;
+import com.snow.util.SnowPropertiesUtil;
 
-public class SnowErrorHandling {
+public class SnowErrorHandler {
 
-	final static Logger LOG = Logger.getLogger(SnowErrorHandling.class);
+	final static Logger LOG = Logger.getLogger(SnowErrorHandler.class);
 
 
 	public List<ErrorhandlerDTO> errorHandling(RequestDTO requestDTO) throws IOException {
@@ -23,7 +23,7 @@ public class SnowErrorHandling {
 		List<String> searchType = requestDTO.getSearchType();
 		Integer maxRows = requestDTO.getMaxRows();
 		List<ErrorhandlerDTO> errorhandlerDTOs = new ArrayList<ErrorhandlerDTO>();
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		if (queryParam.equalsIgnoreCase("") || queryParam == null || queryParam.isEmpty() || queryParam.length() == 0
 				|| queryParam.equalsIgnoreCase(" ")) {
 			ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
@@ -74,7 +74,7 @@ public class SnowErrorHandling {
 	}
 
 	public ErrorhandlerDTO searchtypeCheck(RequestDTO requestDTO) throws IOException {
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		List<String> inputSearchType = requestDTO.getSearchType();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
 		List<String> supportedSearchTypes = Arrays.asList(values.getProperty("supported.searchTypes").split(","));
@@ -92,7 +92,7 @@ public class SnowErrorHandling {
 	}
 
 	public ErrorhandlerDTO validateMode(RequestDTO requestDTO) throws IOException {
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		String inputMode = requestDTO.getMode().toUpperCase();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
 		List<String> supportedModes = Arrays.asList(values.getProperty("supported.mode").split(","));

@@ -4,18 +4,25 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import javax.annotation.Resource;
+
+import org.apache.log4j.Logger;
 import org.apache.solr.client.solrj.SolrServerException;
 
 import com.snow.search.dto.AttributesDTO;
 import com.snow.search.dto.RequestDTO;
-import com.snow.search.service.SolrjClientConnectService;
-import com.snow.util.SnowUtils;
+import com.snow.search.service.SnowSearchService;
+import com.snow.util.SnowPropertiesUtil;
 
 public class SnowSearchFacade {
+	
+	public final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
+	
+	SnowSearchService snowSearchService;
 
 	public String fetchUserRoles(RequestDTO reqDto) throws IOException {
 
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		List<String> searchType = reqDto.getSearchType();
 		String roleValue = null;
 		if (searchType.contains("LOC") || searchType.contains("UD") || searchType.contains("APP")) {
@@ -48,7 +55,7 @@ public class SnowSearchFacade {
 
 	public AttributesDTO fetchAll(RequestDTO reqDTO) throws IOException {
 		AttributesDTO attributes = new AttributesDTO();
-		Properties values = SnowUtils.getPropertyValues();
+		Properties values = SnowPropertiesUtil.getPropertyValues();
 		List<String> searchTypes = reqDTO.getSearchType();
 		List<String> facetselected = reqDTO.getFacetSelection();
 		StringBuffer sb = new StringBuffer();
@@ -166,11 +173,19 @@ public class SnowSearchFacade {
 
 	public String getQuerySearch(RequestDTO requestDTO, String user, AttributesDTO attributes)
 			throws IOException, SolrServerException {
-		SolrjClientConnectService solrjClientConnectService = new SolrjClientConnectService();
-		String queryResponse = solrjClientConnectService.querySearch(requestDTO.getQueryParam(), requestDTO.getStart(),
+		String queryResponse = snowSearchService.querySearch(requestDTO.getQueryParam(), requestDTO.getStart(),
 				requestDTO.getRows(), user, attributes);
 		return queryResponse;
 
+	}
+
+	public SnowSearchService getSnowSearchService() {
+		return snowSearchService;
+	}
+
+	@Resource
+	public void setSnowSearchService(SnowSearchService snowSearchService) {
+		this.snowSearchService = snowSearchService;
 	}
 
 }

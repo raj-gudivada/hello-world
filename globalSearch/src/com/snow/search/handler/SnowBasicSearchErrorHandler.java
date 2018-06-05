@@ -1,4 +1,4 @@
-package com.snow.search.facade;
+package com.snow.search.handler;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.snow.search.dto.ErrorhandlerDTO;
 import com.snow.search.dto.MessageDTO;
 
-public class SnowBasicSearchErrorHandling extends SnowErrorHandling {
+public class SnowBasicSearchErrorHandler extends SnowErrorHandler {
 
-	final static Logger LOG = Logger.getLogger(SnowBasicSearchErrorHandling.class);
+	final static Logger LOG = Logger.getLogger(SnowBasicSearchErrorHandler.class);
 
 	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs, MessageDTO messageDTO)
 			throws JsonProcessingException, JSONException {

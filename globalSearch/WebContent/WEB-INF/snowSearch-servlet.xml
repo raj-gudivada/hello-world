@@ -11,9 +11,8 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
  
+ 	<import resource="beans.xml" />
 	<context:component-scan base-package="com.snow" />
-	
-	
 	
 	<mvc:annotation-driven>
      <mvc:message-converters>
