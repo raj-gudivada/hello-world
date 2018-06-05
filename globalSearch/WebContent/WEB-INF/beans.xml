@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Facades -->
+	<bean id="snowAutoSuggestFacade" class="com.snow.search.facade.SnowAutoSuggestFacade">
+		<property name="snowAutoSuggestService" ref="snowAutoSuggestService" />
+	</bean>
+
+	<bean id="snowSearchFacade" class="com.snow.search.facade.SnowSearchFacade">
+		<property name="snowSearchService" ref="snowSearchService" />
+	</bean>	
+	
+	
+	
+	<!-- Services -->
+	<bean id="snowAutoSuggestService" class="com.snow.search.service.SnowAutoSuggestService">
+		<property name="snowSearchService" ref="snowSearchService" />
+	</bean>
+	
+	<bean id="snowSearchService" class="com.snow.search.service.SnowSearchService">
+	</bean>
+
+</beans>
