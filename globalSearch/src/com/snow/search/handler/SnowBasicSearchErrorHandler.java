@@ -15,6 +15,7 @@ public class SnowBasicSearchErrorHandler extends SnowErrorHandler {
 
 	final static Logger LOG = Logger.getLogger(SnowBasicSearchErrorHandler.class);
 
+	@Override
 	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs, MessageDTO messageDTO)
 			throws JsonProcessingException, JSONException {
 		JSONArray list = new JSONArray();

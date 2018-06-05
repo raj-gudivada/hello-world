@@ -7,19 +7,22 @@
 	<bean id="snowAutoSuggestFacade" class="com.snow.search.facade.SnowAutoSuggestFacade">
 		<property name="snowAutoSuggestService" ref="snowAutoSuggestService" />
 	</bean>
-
 	<bean id="snowSearchFacade" class="com.snow.search.facade.SnowSearchFacade">
 		<property name="snowSearchService" ref="snowSearchService" />
 	</bean>	
-	
-	
 	
 	<!-- Services -->
 	<bean id="snowAutoSuggestService" class="com.snow.search.service.SnowAutoSuggestService">
 		<property name="snowSearchService" ref="snowSearchService" />
 	</bean>
+	<bean id="snowSearchService" class="com.snow.search.service.SnowSearchService"/>
 	
-	<bean id="snowSearchService" class="com.snow.search.service.SnowSearchService">
-	</bean>
+	<!-- Utilities -->
+	<bean id="snowUserUtil" class="com.snow.util.SnowUserUtil"/>
+	<bean id="snowDidYouMeanUtil" class="com.snow.util.SnowDidYouMeanUtil"/>	
+	
+	<!-- Handlers -->
+	<bean id="snowErrorHandler" class="com.snow.search.handler.SnowErrorHandler"/>
+	<bean id="snowBasicSearchErrorHandler" parent="snowErrorHandler" class="com.snow.search.handler.SnowBasicSearchErrorHandler"/>
 
 </beans>

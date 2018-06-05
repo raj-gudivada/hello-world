@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.json.JSONException;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.snow.search.dto.ErrorhandlerDTO;
+import com.snow.search.dto.MessageDTO;
 import com.snow.search.dto.RequestDTO;
 import com.snow.util.SnowPropertiesUtil;
 
@@ -73,7 +76,7 @@ public class SnowErrorHandler {
 		return errorhandlerDTOs;
 	}
 
-	public ErrorhandlerDTO searchtypeCheck(RequestDTO requestDTO) throws IOException {
+	private ErrorhandlerDTO searchtypeCheck(RequestDTO requestDTO) throws IOException {
 		Properties values = SnowPropertiesUtil.getPropertyValues();
 		List<String> inputSearchType = requestDTO.getSearchType();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
@@ -91,7 +94,7 @@ public class SnowErrorHandler {
 		return errorhandling;
 	}
 
-	public ErrorhandlerDTO validateMode(RequestDTO requestDTO) throws IOException {
+	private ErrorhandlerDTO validateMode(RequestDTO requestDTO) throws IOException {
 		Properties values = SnowPropertiesUtil.getPropertyValues();
 		String inputMode = requestDTO.getMode().toUpperCase();
 		ErrorhandlerDTO errorhandling = new ErrorhandlerDTO();
@@ -101,5 +104,11 @@ public class SnowErrorHandler {
 			errorhandling.setErrorCode(values.getProperty("errorcode.mode"));
 		}
 		return errorhandling;
+	}
+	
+	public String errorListResponse(List<ErrorhandlerDTO> errorhandlerDTOs, MessageDTO messageDTO)
+			throws JsonProcessingException, JSONException {
+		//implementation at the child class
+		return null;
 	}
 }

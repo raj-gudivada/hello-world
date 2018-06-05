@@ -11,11 +11,7 @@ import com.snow.search.dto.RequestDTO;
 
 public class SnowUserUtil {
 
-	SnowPropertiesUtil snowSearchUtils = new SnowPropertiesUtil();
-
-
 	final static Logger LOG = Logger.getLogger(SnowUserUtil.class);
-
 
 	public String fetchUserRoles(RequestDTO requestDTO) throws IOException {
 		List<String> searchType = requestDTO.getSearchType();

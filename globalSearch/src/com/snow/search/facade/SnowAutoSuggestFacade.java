@@ -20,14 +20,15 @@ public class SnowAutoSuggestFacade {
 	public final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
 	
 	SnowAutoSuggestService snowAutoSuggestService;
+	
+	SnowUserUtil snowUserUtil;
 
 	public AttributesDTO fetchAutoFillFields(RequestDTO requestDTO) throws IOException {
 		AttributesDTO attributes = new AttributesDTO();
 		List<String> searchTypes = requestDTO.getSearchType();
 		Properties values = SnowPropertiesUtil.getPropertyValues();
 		if (searchTypes.size() > 1) {
-			SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-			attributes = snowUtiltyFunctions.fetchSearchTypeUserFilter(searchTypes, requestDTO);
+			attributes = snowUserUtil.fetchSearchTypeUserFilter(searchTypes, requestDTO);
 			for (String searchValue : searchTypes) {
 				if (!searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 						| searchValue.equalsIgnoreCase("ALL")) {
@@ -78,8 +79,7 @@ public class SnowAutoSuggestFacade {
 
 					attributes.setFields(values.getProperty("autoSuggest.fl.all"));
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFacetValue(values.getProperty("autoSuggest.facet.all"));
 					attributes.setBoostField(values.getProperty("all.boosting.order"));
@@ -90,8 +90,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.sc.filter.type"));
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("sc.boosting.order"));
 				}
 
@@ -101,8 +100,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.kb.filter.type"));
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("kb.boosting.order"));
 				}
 
@@ -112,8 +110,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.ud.filter.type"));
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("ud.boosting.order"));
 
 				}
@@ -124,8 +121,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":"
 							+ values.getProperty("autoSuggest.loc.filter.type"));
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("loc.boosting.order"));
 
 				}
@@ -134,8 +130,7 @@ public class SnowAutoSuggestFacade {
 					attributes.setFacet(Boolean.FALSE);
 					attributes.setFilterType(
 							values.getProperty("filter.type.all") + ":" + values.getProperty("app.filter.type"));
-					SnowUserUtil functions = new SnowUserUtil();
-					attributes.setSpecialUser(functions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 					attributes.setBoostField(values.getProperty("app.boosting.order"));
 
 				}
@@ -171,8 +166,7 @@ public class SnowAutoSuggestFacade {
 
 		// If SearchType is more than one value Ex: "searchType":["SC","UD"]
 		if (searchTypes.size() > 1) {
-			SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-			attributes = snowUtiltyFunctions.fetchSearchTypeUserFilter(searchTypes, requestDTO);
+			attributes = snowUserUtil.fetchSearchTypeUserFilter(searchTypes, requestDTO);
 			attributes.setFacet(Boolean.TRUE);
 			attributes.setActiveProperty(values.getProperty("active.property") + ":" + Boolean.TRUE);
 
@@ -185,46 +179,40 @@ public class SnowAutoSuggestFacade {
 						| searchValue.equalsIgnoreCase("ALL")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":*");
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 				}
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("SC")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 
 				}
 
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("KB")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 
 				}
 
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("UD")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 
 				}
 
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("LOC")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(values.getProperty("filter.type.all") + ":" + "\"" + searchValue + "\"");
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 
 				}
 				if (!searchValue.isEmpty() && searchValue.equalsIgnoreCase("APP")) {
 					attributes.setFacet(Boolean.TRUE);
 					attributes.setFilterType(
 							values.getProperty("filter.type.all") + ":" + values.getProperty("app.filter.type"));
-					SnowUserUtil snowUtiltyFunctions = new SnowUserUtil();
-					attributes.setSpecialUser(snowUtiltyFunctions.fetchUserRoles(requestDTO));
+					attributes.setSpecialUser(snowUserUtil.fetchUserRoles(requestDTO));
 
 				}
 
@@ -242,6 +230,15 @@ public class SnowAutoSuggestFacade {
 	@Resource
 	public void setSnowAutoSuggestService(SnowAutoSuggestService snowAutoSuggestService) {
 		this.snowAutoSuggestService = snowAutoSuggestService;
+	}
+
+	public SnowUserUtil getSnowUserUtil() {
+		return snowUserUtil;
+	}
+
+	@Resource
+	public void setSnowUserUtil(SnowUserUtil snowUserUtil) {
+		this.snowUserUtil = snowUserUtil;
 	}
 
 }
