@@ -29,20 +29,23 @@ public class SnowPropertiesUtil {
 			prop = new Properties();
 			prop.load(fis);
 			lastModified = file.lastModified();
-			if (fis != null)
+			if (fis != null) {
 				fis.close();
+			}
 			return prop;
+			
 		} else if (file.exists() && file.lastModified() == lastModified) {
-
+			
 			return prop;
+			
 		} else {
 
 			ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 			InputStream inputStream = classLoader.getResourceAsStream("config.properties");
 			prop = new Properties();
-
 			prop.load(inputStream);
 			return prop;
+			
 		}
 
 	}

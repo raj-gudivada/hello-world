@@ -11,37 +11,37 @@ import com.snow.search.dto.RequestDTO;
 
 public class SnowUserUtil {
 
-	final static Logger LOG = Logger.getLogger(SnowUserUtil.class);
+	public final static Logger LOG = Logger.getLogger(SnowUserUtil.class);
 
 	public String fetchUserRoles(RequestDTO requestDTO) throws IOException {
 		List<String> searchType = requestDTO.getSearchType();
-		String roleValue = null;
+		String roles = null;
 		String response = null;
 
 		Properties values = SnowPropertiesUtil.getPropertyValues();
 		if (searchType.contains("LOC") || searchType.contains("UD") || searchType.contains("APP")) {
-			roleValue = values.getProperty("ud.loc.all.roles");
+			roles = values.getProperty("ud.loc.all.roles");
 		} else {
-			roleValue = values.getProperty("acl.all.roles");
+			roles = values.getProperty("acl.all.roles");
 		}
 		List<String> userRoles = requestDTO.getUserRoles();
 		if (userRoles.isEmpty()
 				|| (!userRoles.isEmpty() && userRoles.size() == 1 && userRoles.get(0).trim().equals(""))) {
 			response = null;
 		} else {
-			String finalUser = roleValue + ":(";
+			String userRole = roles + ":(";
 			String appender = " OR ";
 			if (!userRoles.isEmpty() && userRoles.size() > 1) {
 				for (String role : userRoles) {
-					finalUser = finalUser + "\"" + role + "\"";
-					finalUser = finalUser + appender;
+					userRole = userRole + "\"" + role + "\"";
+					userRole = userRole + appender;
 				}
-				finalUser = finalUser.substring(0, finalUser.length() - 4);
+				userRole = userRole.substring(0, userRole.length() - 4);
 			} else if (!userRoles.isEmpty() && userRoles.size() == 1) {
-				finalUser = finalUser + "\"" + userRoles + "\"";
+				userRole = userRole + "\"" + userRoles + "\"";
 			}
-			finalUser = finalUser + ")";
-			response = finalUser;
+			userRole = userRole + ")";
+			response = userRole;
 		}
 
 		return response;
@@ -50,22 +50,22 @@ public class SnowUserUtil {
 	public AttributesDTO fetchSearchTypeUserFilter(List<String> searchTypes, RequestDTO requestDTO) throws IOException {
 
 		AttributesDTO attributes = new AttributesDTO();
-
 		Properties values = SnowPropertiesUtil.getPropertyValues();
 		StringBuffer sb = new StringBuffer();
+		
 		for (String multiSearchType : searchTypes) {
 			sb.append("\"" + multiSearchType + "\"" + ",");
 		}
+		
 		if (searchTypes.contains("LOC") || searchTypes.contains("UD")) {
 			attributes.setSpecialUser("");
-
 		} else {
 			attributes.setSpecialUser(fetchUserRoles(requestDTO));
-			;
 		}
+		
 		attributes.setSpecialUser(fetchUserRoles(requestDTO));
-		;
 		String finalFilterType = sb.substring(0, sb.length() - 1);
+		
 		for (String searchValue : searchTypes) {
 			if (searchValue.isEmpty() | searchValue.equalsIgnoreCase("NULL") | searchValue.equalsIgnoreCase("NONE")
 					| searchValue.equalsIgnoreCase("ALL")) {
@@ -75,7 +75,6 @@ public class SnowUserUtil {
 			String specialUser = fetchUserRoles(requestDTO);
 			attributes.setSpecialUser(specialUser);
 			attributes.setBoostField(values.getProperty("all.boosting.order"));
-
 		}
 
 		return attributes;

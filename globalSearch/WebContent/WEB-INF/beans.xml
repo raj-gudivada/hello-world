@@ -19,10 +19,12 @@
 	
 	<!-- Utilities -->
 	<bean id="snowUserUtil" class="com.snow.util.SnowUserUtil"/>
-	<bean id="snowDidYouMeanUtil" class="com.snow.util.SnowDidYouMeanUtil"/>	
+	<bean id="snowDidYouMeanUtil" class="com.snow.util.SnowDidYouMeanUtil">
+		<property name="snowSearchService" ref="snowSearchService" />
+	</bean>	
 	
 	<!-- Handlers -->
 	<bean id="snowErrorHandler" class="com.snow.search.handler.SnowErrorHandler"/>
 	<bean id="snowBasicSearchErrorHandler" parent="snowErrorHandler" class="com.snow.search.handler.SnowBasicSearchErrorHandler"/>
-
+	
 </beans>

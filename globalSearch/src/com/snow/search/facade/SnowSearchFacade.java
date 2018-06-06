@@ -16,7 +16,7 @@ import com.snow.util.SnowPropertiesUtil;
 
 public class SnowSearchFacade {
 	
-	public final static Logger LOG = Logger.getLogger(SnowAutoSuggestFacade.class);
+	public final static Logger LOG = Logger.getLogger(SnowSearchFacade.class);
 	
 	SnowSearchService snowSearchService;
 
